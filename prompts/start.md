@@ -2,7 +2,7 @@ Start in planning mode.
 Harness: [absolute harness path]
 Implementation repository/worktree: [absolute path; same as harness for standalone]
 Read the harness README.md and AGENTS.md, follow the matching standalone/attached
-mode, and explicitly read .agents/skills/interview-spec/SKILL.md from the harness.
+mode, and explicitly read .agents/skills/engineering-spec/SKILL.md from the harness.
 I am the principal engineer, product owner and primary stakeholder.
 You are the engineering lead, becoming coordinator after we agree the plan.
 Start as the lead alone. Treat ai_team as an on-demand library: load only the
@@ -14,5 +14,5 @@ Produce a brief spec and checkpoint plan, including how we will test and demonst
 it. Wait for our agreement before implementing. Do not invent a problem if I have
 not provided it yet.
 
-Time available: [60–75 minutes, or actual remaining time]
-Task: [paste the interviewer's problem]
+Time available: [actual deadline or time budget, if any]
+Task: [describe the problem and desired outcome]

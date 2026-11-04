@@ -44,14 +44,14 @@ now contains 14 tests. No real interviewer repository has been attached or modif
 On 2026-11-03, the configured local Paper MCP responded to guide/resource reads,
 created the separate ai-interview project and blank design workspace, and returned
 its three pages. No application screens or redlines have been approved. Added the
-interview-ui-design skill and explicit PM/UX/developer ownership, plus scoped
+engineering-ui-design skill and explicit PM/UX/developer ownership, plus scoped
 in-session maintenance of learned working agreements. Actual worker/IDE tool access
 still needs verification in that worker/interface; a dependency declaration alone
 does not establish that access.
 
 ## Submission and worktree workflow
 
-Added independent reviewer instructions, interview-review and interview-test-deploy
+Added independent reviewer instructions, engineering-review and engineering-test-deploy
 skills, native Git worktree/integration guidance, review/submission templates and a
 README walkthrough. Reference inspection used the installed esse-release source at
 b4422849b889548116b87083e1b9d0bdd7431eb0 and esse-test-deploy source at
@@ -88,3 +88,15 @@ stale counts and coordination overhead risks. See holistic-assessment.md for fin
 corrections and what remains unproven. Four regression tests increased the suite from
 14 to 18; lint/format, package build, doctor and six skill validators pass. No real
 interview sample, application deployment or live interface switch was performed here.
+
+## Domain-neutral operating instructions
+
+On 2026-11-03, renamed the six skills from interview-* to engineering-* and updated
+their callers, generated attachment prompts and doctor checks. Existing CLI/package
+and workspace filenames remain compatible. Agent roles, prompts and session templates
+now use the supplied task's domain, deadline and acceptance criteria.
+
+Historical Paper setup links (optional, not the default destination for new tasks):
+[ai-interview project](https://app.paper.design/files/01M6JEANFRPD81YDVKY8JPPDRJ),
+[AI Interview — Design Workspace](https://app.paper.design/file/01M6JEAS1E91BYY4E52V3V08Z5).
+Select the working project/file per session and verify access before use.

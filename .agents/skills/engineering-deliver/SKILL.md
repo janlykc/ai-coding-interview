@@ -1,6 +1,6 @@
 ---
-name: interview-deliver
-description: Coordinate implementation, independent verification, code review and Git checkpoints against an agreed interview specification and plan.
+name: engineering-deliver
+description: Coordinate implementation, independent verification, code review and Git checkpoints against an agreed specification and plan.
 ---
 
 In attached mode, read the session's `context.json` first. Resolve role/skill paths
@@ -39,7 +39,7 @@ mode. Harness self-tests never validate application code.
 No deployment is assumed; use local run/smoke first. If deployment is required, establish
 its authorized target and record serving revision and smoke result separately from Git.
 
-Keep loops bounded by the remaining interview time. Escalate decisions about behavior,
+Keep loops bounded by the agreed time and resource budget. Escalate decisions about behavior,
 architecture, scope or material risk; allow routine experiments within the checkpoint.
 Conclude with a runnable demonstration, evidence, key code path and honest limitations.
 
@@ -47,11 +47,11 @@ For UI checkpoints, use the Paper references in session design.md. Arrange UX an
 QA review of the rendered implementation against the agreed revision. Feed behavior
 changes back to PM and concrete implementation discrepancies back to developers.
 Apply corrections to current behavior immediately; record lessons briefly and update
-the harness at a natural checkpoint or after the timed exercise, following
+the harness at a natural checkpoint or after the task, following
 docs/workflow-learnings.md.
 
 For parallel components, follow docs/worktrees.md with disjoint worktree ownership and
-one integration owner. Use interview-review for an independent CR pass before accepted
-check-in/submission; use interview-test-deploy for run/smoke and candidate-bound QA.
+one integration owner. Use engineering-review for an independent CR pass before accepted
+check-in/submission; use engineering-test-deploy for run/smoke and candidate-bound QA.
 Consult docs/submission.md for Codex review paths, findings disposition and publication.
 Review and test the combined candidate after merging worker branches.

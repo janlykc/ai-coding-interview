@@ -11,13 +11,14 @@ report the missing destination once. Never force-push or rewrite shared history 
 A successful push is not evidence that an app deployed or passed acceptance.
 
 Local validation is the default delivery target. Document install/start commands, port,
-health/smoke check and shutdown. Deployment is conditional on the exercise: establish
+health/smoke check and shutdown. Deployment is conditional on the task: establish
 target, credentials mechanism, cost/visibility and authorization before external mutation.
 When authorized, record deployed revision, smoke result and rollback/stop procedure.
-Do not import company CI, release skills or credentials into this standalone project.
+Use the target's documented delivery tooling within authorization. Do not import
+unrelated company CI, release policy or credentials into the project.
 
 Own worktree creation and integration under docs/worktrees.md. Record starting and
 resulting SHAs; verify reviewed content matches the commit. Integrate in dependency
 order, route conflict fixes to developers, then obtain combined review/QA evidence.
-Follow docs/submission.md for submission and interview-test-deploy for local/preview
+Follow docs/submission.md for submission and engineering-test-deploy for local/preview
 execution. Inspect existing PR/check/build inventory before requesting another run.

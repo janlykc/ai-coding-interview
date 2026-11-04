@@ -1,6 +1,6 @@
 # Specification — {{SESSION}}
 
-Status: draft; no interview task supplied yet.
+Status: draft; requirements not yet agreed.
 Owner: program manager. Human: principal engineer / product owner.
 
 ## Problem and constraints

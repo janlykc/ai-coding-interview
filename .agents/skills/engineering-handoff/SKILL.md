@@ -1,6 +1,6 @@
 ---
-name: interview-handoff
-description: Save or resume an interview session across Codex desktop, VS Code or a fresh chat using repository context and a single active writer.
+name: engineering-handoff
+description: Save or resume a development session across Codex desktop, VS Code or a fresh chat using repository context and a single active writer.
 ---
 
 In attached mode, read the session's `context.json` first. Resolve role/skill paths

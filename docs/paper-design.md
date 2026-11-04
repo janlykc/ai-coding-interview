@@ -3,26 +3,16 @@
 For UI work, Paper is the default design environment. PM, UX and developer work
 through a short design loop before implementation; UX remains involved in review.
 
-## Ready on this machine
+## Select and verify the workspace
 
-On 2026-11-03 the configured `papaer` MCP server at `http://127.0.0.1:29979/mcp`
-responded successfully. The following interview-only workspace was created:
+Use the project/file recorded in the active session. If none is selected, agree the
+destination before creating or editing designs. Verify actual contents and access;
+do not assume another task's canvas or a parent agent's connection is appropriate.
 
-- [ai-interview project](https://app.paper.design/files/01M6JEANFRPD81YDVKY8JPPDRJ)
-- [AI Interview — Design Workspace](https://app.paper.design/file/01M6JEAS1E91BYY4E52V3V08Z5)
-- Pages: Exploration, Agreed redlines, Implementation review.
-
-The pages are empty staging areas, not an approved design. No task has been invented.
-For a new exercise, create a separate file inside the project or clone the empty
-workspace. Verify actual contents before reusing it; it may have changed since setup.
-These account-specific links do not grant another user access.
-
-Paper is already configured in this machine's Codex user settings. The UI skill declares
-that dependency; it does not install Paper, start its desktop server, authenticate, or
-force subagent inheritance. Keep Paper running and verify the tools in the actual UX
-worker and whichever interface you use. On another machine, configure Paper through
-its supported MCP setup and inspect the endpoint it provides rather than assuming this
-local address works. No credentials belong in the repository.
+The UI skill declares a Paper dependency; it does not install a server, authenticate
+or guarantee worker access. Discover the available MCP connection and read its live
+guide. Verify tools in the actual UX worker and active interface. No credentials
+belong in the repository. Historical local setup is recorded in setup-verification.md.
 
 ## Minimal design record
 

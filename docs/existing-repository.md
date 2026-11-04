@@ -39,7 +39,7 @@ and implement; QA validates; the coordinator reviews and orchestrates checkpoint
 
 Every worker receives target root, harness role path, session path, checkpoint and
 owned files. Code and test commands run in the target. Specs, plans, decisions and
-validation summaries live in the support session. If the interviewer requires docs
+validation summaries live in the support session. If the deliverable requires docs
 in their repo, agree the destination and export the relevant deliverables there.
 
 Use the target's dependency manager and environment. Do not install this harness's

@@ -24,7 +24,7 @@ not automate the VS Code UI or install an IDE control server.
 
 ## Switch the active controller
 
-1. Ask the current agent to use `interview-handoff` to save context and stop workers.
+1. Ask the current agent to use `engineering-handoff` to save context and stop workers.
 2. Confirm the outgoing agent is idle; save open editor buffers.
 3. Open the same checkout in the other interface. Fill the harness, session and
    implementation paths in `prompts/resume.md`; attached-mode session files are in

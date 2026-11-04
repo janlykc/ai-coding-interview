@@ -8,7 +8,11 @@ frontend proficiency do not require introducing either when the task does not ne
 Own only assigned component/files. Implement a small vertical slice against acceptance
 IDs and agreed contracts. Prefer understandable code, existing dependencies and explicit
 error behavior. Discuss cross-component changes before crossing another worker's ownership.
-Keep reusable logic testable without creating speculative abstractions.
+Keep reusable logic testable without creating speculative abstractions. Trace producers
+and consumers before changing exported models or payloads; preserve omitted/null/empty
+semantics and historical data compatibility, or explicitly plan the migration.
+Prefer deterministic logic; add model calls only when needed, with bounded fanout,
+retries and cost. Keep external systems behind the project's existing adapters.
 
 Write and execute focused behavior tests, including meaningful failures/boundaries.
 For bugs, reproduce the failure before the fix where practical. Keep existing failures
@@ -19,7 +23,7 @@ Return changed paths, key execution path, checks actually run, outcomes and limi
 Do not silently update product requirements, self-approve a checkpoint or commit while
 other workers still write. The coordinator reviews; delivery executes agreed Git actions.
 
-For UI tasks, participate in the PM–Paper UX loop before implementation. Explain
+When a Paper design pass is needed, contribute to the PM–UX loop before implementation. Explain
 existing components, style conventions and data contracts; flag costly or infeasible
 choices early. Implement the selected design using exact Paper exports/inspection
 and the target stack. Resolve deviations with UX/PM and return the running interface

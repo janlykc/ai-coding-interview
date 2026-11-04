@@ -29,12 +29,12 @@ these are preferences, not hard-coded model IDs or promises about host controls.
 Roles need not be simultaneous or separate processes. Check the host's actual slot
 limit; with four total slots, keep the coordinator plus at most three active workers.
 
-- Design: load interview-spec. Bring in PM/scribe to author the spec once the task
+- Design: load engineering-spec. Bring in PM/scribe to author the spec once the task
   is understood. Ask a developer only when code investigation or feasibility needs it.
-  Load interview-ui-design and involve UX when meaningful UI design is needed.
-- Build: load interview-deliver and delegate the next implementation checkpoint.
+  Load engineering-ui-design and involve UX when meaningful UI design is needed.
+- Build: load engineering-deliver and delegate the next implementation checkpoint.
   Add more developers only for useful independent work.
-- Verify: load interview-review or interview-test-deploy when a candidate is ready.
+- Verify: load engineering-review or engineering-test-deploy when a candidate is ready.
   An independent non-implementer may handle QA and CR in separate passes.
 - Deliver: consult submission guidance when a Git checkpoint or release is due.
   Reuse an available developer for delivery execution; this is not independent approval.

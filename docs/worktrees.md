@@ -23,13 +23,13 @@ Inspect existing worktrees and select an agreed, committed starting point first:
 git status --short --branch
 git worktree list
 BASE=$(git rev-parse HEAD)
-git worktree add -b interview/integration ../interview-integration "$BASE"
-git worktree add -b interview/api ../interview-api "$BASE"
-git worktree add -b interview/ui ../interview-ui "$BASE"
+git worktree add -b feature/integration ../task-integration "$BASE"
+git worktree add -b feature/api ../task-api "$BASE"
+git worktree add -b feature/ui ../task-ui "$BASE"
 ```
 
 These commands are examples, not an instruction to invent API/UI work for every task.
-Use distinct branch/path names per exercise. If the repository has no commits, agree
+Use distinct branch/path names per task. If the repository has no commits, agree
 and create a legitimate baseline first. Never reset or stash someone else's work to
 make the example fit. In an attached session, all these are worktrees of the provided
 repo, not the support harness.
@@ -57,8 +57,8 @@ The integration owner merges accepted branches in dependency order. For example,
 from the clean integration checkout, after both contributions are ready:
 
 ```sh
-git merge --no-ff --no-edit interview/api
-git merge --no-ff --no-edit interview/ui
+git merge --no-ff --no-edit feature/api
+git merge --no-ff --no-edit feature/ui
 git log --oneline --graph -8
 git rev-parse HEAD
 git rev-parse 'HEAD^{tree}'

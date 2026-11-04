@@ -1,6 +1,6 @@
 ---
-name: interview-spec
-description: Turn an interview task into an agreed concise specification and checkpoint implementation plan before coding, or revise them when requirements change.
+name: engineering-spec
+description: Turn a development task into an agreed concise specification and checkpoint implementation plan before coding, or revise them when requirements change.
 ---
 
 In attached mode, read the session's `context.json` first. Resolve role/skill paths
@@ -34,11 +34,11 @@ application operations after verifying it belongs to the same Git repository.
 5. Ask for agreement to the spec and first checkpoint. Record the actual decision;
    do not manufacture an approval. Implementation may then proceed within agreed scope.
 
-For 60–75 minutes, aim for roughly 5–10 minutes of design, adjusted to the task.
+Size design effort to uncertainty, risk and the actual deadline; do not assume a fixed timebox.
 Avoid spawning the whole team or requiring exhaustive documentation. On later changes,
 revise only affected requirements/checkpoints and preserve decisions that explain why.
 
-For meaningful UI design work, load interview-ui-design and involve PM, UX and
+For meaningful UI design work, load engineering-ui-design and involve PM, UX and
 developer only for needed contributions, not as a fixed simultaneous team. Paper is
 the default canvas, with access verified in the UX worker. PM owns requirements; UX
 owns design.md and redlines; dev supplies feasibility. Reference agreed designs in

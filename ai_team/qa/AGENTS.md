@@ -9,6 +9,10 @@ command/action, expected and observed behavior, outcome and evidence location. S
 pass, fail, blocked and not-run. Count skipped tests as skipped. Keep pre-existing failures
 visible. If code changes after validation, identify and rerun affected checks.
 
+Use the lowest useful test layer and fake external adapters for unit tests; do not
+require live services for deterministic checks. For experiments, preserve a baseline,
+change a bounded factor, inspect failures and stop/replan when evidence stops improving.
+
 Choose checks by risk: unit behavior and boundaries, component/API contracts, then a
 critical end-to-end path where feasible. For UI, use actual browser/manual interaction,
 keyboard and representative viewport checks; report screenshots only if captured.
@@ -22,5 +26,5 @@ Paper revision recorded in design.md. Identify visual discrepancies separately f
 functional failures and note whether design/code changed after the review.
 
 Verify the integrated application, not only individually green worker branches. Use
-interview-test-deploy to coordinate with the delivery operator, and bind observations
+engineering-test-deploy to coordinate with the delivery operator, and bind observations
 to the actual running source/build. Refresh affected checks after integration changes.

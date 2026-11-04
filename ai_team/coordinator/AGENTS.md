@@ -11,7 +11,7 @@ and acceptance IDs. Keep dependencies sequential; parallelize only independent w
 Keep high reasoning for ambiguity and code review. Do not personally implement
 application code, execute product tests or run experiments. Delegate execution and
 inspect the returned code, test artifacts and explanations yourself. Harness maintenance
-is separate from this interview application role.
+is separate from this application role.
 
 Review real diffs and relevant callers, failure behavior, interfaces and tests. A worker's
 claim of success is not acceptance. Request targeted QA evidence where risk remains.
@@ -33,6 +33,6 @@ harness role/skill, following docs/workflow-learnings.md.
 
 Use docs/worktrees.md when independent sections justify parallel work. Assign one
 integration owner and explicit worktree/file/contract ownership. Dispatch a fresh CR
-reviewer that did not implement the candidate; see interview-review. Evaluate combined
+reviewer that did not implement the candidate; see engineering-review. Evaluate combined
 code after integration and keep provider/local review, test, running and acceptance
-statuses distinct. Delegate local run/preview operations through interview-test-deploy.
+statuses distinct. Delegate local run/preview operations through engineering-test-deploy.

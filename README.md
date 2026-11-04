@@ -1,10 +1,15 @@
-# AI coding interview harness
+# AI engineering harness
 
-A reusable, stack-neutral workspace for a 60–75 minute AI-assisted coding interview.
+A reusable, stack-neutral workspace for solving software problems with an AI team.
 You act as principal engineer and product owner. A program manager authors the
 spec; developers implement; QA verifies; the lead coordinates and reviews.
 
 For an existing codebase, start with [the provided-repository workflow](#using-this-harness-with-a-provided-repository). It requires only this README and the role files.
+
+The operating instructions are a domain-neutral engineering team: they solve the
+supplied problem using its actual constraints, without a preselected domain or timebox.
+Skills now use the `engineering-*` names. The existing `interview` CLI, Python package
+and workspace filename remain compatible tooling names.
 
 ## Start here
 
@@ -17,24 +22,20 @@ and independent QA/CR when there is a candidate to evaluate. Agree the first che
 the same lead then coordinates implementation and review. A phase change does not
 automatically load more roles, skills, worktrees or templates.
 
-For tomorrow's practice, use [the test-drive plan](docs/test-drive.md). The initial
-[holistic assessment](docs/holistic-assessment.md) distinguishes readiness checks from
-what only a real sample-question session can tell us.
+## Open a standalone task
 
-## Open a standalone exercise
-
-Keep this repo's main branch as the reusable baseline. Create an exercise worktree
+Keep this repo's main branch as the reusable baseline. Create an task worktree
 using the reuse instructions below, then open its `interview.code-workspace` in VS
 Code and that same checkout in Codex. The agent may create session files directly;
 the commands below are optional helpers.
 
 ```sh
 python3 scripts/harness.py doctor
-python3 scripts/harness.py new-session practice-01
+python3 scripts/harness.py new-session task-01
 ```
 
 Paste [the start prompt](prompts/start.md) into either interface and provide the
-interviewer's task. The agent starts a design discussion, fills the spec and plan,
+problem and desired outcome. The agent starts a design discussion, fills the spec and plan,
 and waits for your agreement before application implementation. No application
 framework, infrastructure or sample solution is preselected.
 
@@ -96,8 +97,8 @@ When UI design is needed, involve the established roles on demand: PM authors th
 Paper, and developers contribute codebase knowledge and feasibility. Agree the
 important redlines with the human, implement, then have UX/QA review the running UI.
 
-[Paper setup and interview workspace](docs/paper-design.md) includes the dedicated
-ai-interview project. The `interview-ui-design` skill handles this loop. Verify MCP
+[Paper workspace guidance](docs/paper-design.md) explains selecting a session-specific
+project and verifying access. The `engineering-ui-design` skill handles this loop. Verify MCP
 access in the actual UX worker; role files do not create a connection automatically.
 
 Agents should apply workflow lessons from your corrections and actual usage to the
@@ -117,8 +118,7 @@ keep those changes explicit and scoped, without adding a background monitoring s
 
 [Roles](ai_team/README.md) explain delegation. [Workflow](docs/workflow.md) describes
 testing, review, deployment and pacing. [IDE setup](docs/ide-setup.md) covers
-continuation and existing-repository exercises. [Interview preparation](docs/interview-prep.md)
-records the supplied guide's constraints and a rehearsal checklist.
+continuation and working with existing repositories.
 
 `docs/ACTIVE_SESSION` is a local pointer to the current session. Standalone sessions
 live in `docs/sessions/`; attached sessions live in ignored `.harness/sessions/`. Each session
@@ -129,7 +129,7 @@ inside `ai_team/` or the harness's own tests.
 
 ## Worktrees, code review and submission
 
-Use native Git and the agents to demonstrate the development loop:
+Use native Git and the agents for the development loop:
 
 1. Agree component boundaries and checkpoints; use separate worktrees only where
    parallel work helps. Record branch/path, owner, shared contracts and integration order.
@@ -141,28 +141,28 @@ Use native Git and the agents to demonstrate the development loop:
 4. Run the candidate locally (or an agreed preview), smoke it, and have QA/UX validate
    acceptance against the actual running code and Paper redlines.
 5. Demonstrate Git history, the important diff, review results and working behavior.
-   Push/open a PR/merge only to the destination agreed for that exercise.
+   Push/open a PR/merge only to the destination agreed for that task.
 
 [Worktree examples](docs/worktrees.md) and [submission/review/test-deployment guide](docs/submission.md)
-contain the human-and-agent procedure. Skills: `interview-review` and
-`interview-test-deploy`; reviewer role: `ai_team/reviewer/AGENTS.md`.
+contain the human-and-agent procedure. Skills: `engineering-review` and
+`engineering-test-deploy`; reviewer role: `ai_team/reviewer/AGENTS.md`.
 No additional command wrapper or company deployment service is required.
 
-## Reuse without accumulating interview solutions
+## Reuse without accumulating task solutions
 
 Keep `main` as the clean harness. After a clean baseline is committed, start each
-exercise in a separate branch/worktree:
+task in a separate branch/worktree:
 
 ```sh
-git worktree add -b interview/practice-01 ../interview-practice-01 main
+git worktree add -b feature/task-01 ../task-01 main
 ```
 
 Open the new worktree's workspace, create its session and work there. Keep both
-interfaces on that worktree. A branch isolates changes, not Git history: for an
-interview that needs a clean history, copy the clean tracked baseline into a new
-folder with `git archive main | tar -x -C /path/to/empty-folder`, then initialize Git
-there. Do not carry earlier confidential tasks into another interview. Promote only
-general workflow improvements back to `main` after rehearsal, with relevant checks.
+interfaces on that worktree. A branch isolates changes, not Git history. If a task
+requires a clean history, export the tracked baseline into an empty folder with
+`git archive main | tar -x -C /path/to/empty-folder`, then initialize Git there.
+Keep confidential work separate. Promote general workflow improvements to main
+at a natural checkpoint with relevant checks.
 
 The `.agents/skills/` workflows are repository-local and need no global install.
 There is no runtime agent service, background deployment, paid API dependency or
@@ -173,3 +173,10 @@ automatic commit/push hook. The coding agent orchestrates explicitly.
 [Project tooling](docs/project-tooling.md) explains pyproject.toml, make setup/check,
 the virtual environment, application command configuration and package verification.
 The provided-repository workflow needs none of this installed into the target.
+
+
+## Optional human preparation
+
+For interview-specific preparation, see [the supplied guide notes](docs/interview-prep.md),
+[the rehearsal plan](docs/test-drive.md) and [the initial assessment](docs/holistic-assessment.md).
+These are optional preparation records, not operating instructions for task agents.

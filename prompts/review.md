@@ -1,5 +1,5 @@
 Act as an independent read-only code reviewer. Read the harness's
-ai_team/reviewer/AGENTS.md and interview-review skill plus the target's instructions.
+ai_team/reviewer/AGENTS.md and engineering-review skill plus the target's instructions.
 Implementation worktree: [absolute path]
 Session: [absolute path]
 Candidate: [base SHA, head/tree or frozen dirty snapshot]

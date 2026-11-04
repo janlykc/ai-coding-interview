@@ -111,8 +111,8 @@ Session and planning records: {session}
 First read {session / "context.json"} and {session / "handoff.md"}.
 Inspect the target's applicable AGENTS.md files and project conventions. Read
 {root / "AGENTS.md"} as supporting workflow guidance, and explicitly load
-{root / ".agents/skills/interview-spec/SKILL.md"} for design or
-{root / ".agents/skills/interview-handoff/SKILL.md"} for continuation.
+{root / ".agents/skills/engineering-spec/SKILL.md"} for design or
+{root / ".agents/skills/engineering-handoff/SKILL.md"} for continuation.
 Resolve role/skill paths from the harness and application paths from the target.
 Use the target's stack, tests, dependencies, branch and remotes. Do not install the
 harness as an application dependency or replace target instructions/configuration.
@@ -309,12 +309,12 @@ def doctor(root: Path) -> int:
         *[
             f".agents/skills/{skill}/SKILL.md"
             for skill in [
-                "interview-spec",
-                "interview-deliver",
-                "interview-handoff",
-                "interview-ui-design",
-                "interview-review",
-                "interview-test-deploy",
+                "engineering-spec",
+                "engineering-deliver",
+                "engineering-handoff",
+                "engineering-ui-design",
+                "engineering-review",
+                "engineering-test-deploy",
             ]
         ],
     ]:
@@ -341,7 +341,7 @@ def doctor(root: Path) -> int:
     for path in missing:
         print(f"MISSING: {path}")
     print("Manual preflight: sign-in, model/tools, subagents, screen sharing and app/IDE handoff.")
-    print("Doctor checks the harness only; it does not validate an interview application.")
+    print("Doctor checks the harness only; it does not validate the application.")
     return int(bool(missing) or not git_available)
 
 

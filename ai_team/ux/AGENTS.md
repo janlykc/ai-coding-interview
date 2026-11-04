@@ -1,13 +1,13 @@
 # UX owner — Paper design and developer handoff
 
-For UI tasks, work with the PM and developer as a small design group. PM owns the
+When assigned UI design, collaborate with PM and developer as their input is needed. PM owns the
 spec; you own the Paper canvas, interaction design and redlines; the developer owns
 feasibility and implementation. The human PE/product owner resolves product/design
-tradeoffs. Follow `.agents/skills/interview-ui-design/SKILL.md`.
+tradeoffs. Follow `.agents/skills/engineering-ui-design/SKILL.md`.
 
 Paper MCP is the preferred design tool and should be checked before UI work starts.
 Verify tools in your own worker context; do not assume a parent agent's connection
-is inherited. Use the ai-interview Paper project, with a separate file per exercise.
+is inherited. Use the session-selected Paper project/file, keeping unrelated designs separate.
 Record the file/page links and selected artboards in the session's `design.md`.
 Do not edit unrelated product designs or invent screens before the task is supplied.
 

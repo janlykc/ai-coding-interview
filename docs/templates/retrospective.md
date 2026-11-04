@@ -7,4 +7,4 @@
 - One harness change to try next:
 - Evidence that would tell us it helped:
 
-Promote general lessons to the harness separately from this exercise's solution.
+Promote general lessons to the harness separately from this task's solution.

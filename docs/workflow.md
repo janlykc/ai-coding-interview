@@ -1,4 +1,4 @@
-# Working through an interview
+# Solving a development problem
 
 ## Design and agreement
 
@@ -10,12 +10,11 @@ The human owns product direction and principal engineering judgment. PM/scribe
 captures the spec while developers explain existing code and feasible options.
 A high-level problem may need several components; choose the smallest useful set
 and document inputs/outputs, failure behavior and dependencies before parallel work.
-An algorithm or debugging exercise may need only one function and a few examples.
+An algorithm or debugging task may need only one function and a few examples.
 
-A 60-minute starting budget: 8 minutes framing/design, 35 implementation and focused
-checks, 12 integration/review/demo, 5 wrap-up. A 75-minute session can spend the extra
-time where uncertainty is greatest. These are adjustable planning aids, not timers
-that automatically cut off useful work. Narrate decisions and evidence to the interviewer.
+Allocate effort to uncertainty and risk within the actual deadline. Keep design short
+when behavior is clear; spend more when contracts or decisions are unresolved.
+Communicate decisions and evidence to the stakeholder.
 
 Agree the spec and first checkpoint, then let the coordinator orchestrate within scope.
 The same lead keeps context across design and delivery. PM keeps the spec current;
@@ -66,7 +65,7 @@ The coordinator decides meaningful commit boundaries after review. Delivery stag
 explicit paths and records the commit. The plan records whether pushes are authorized
 and to which remote/branch. Missing remote information does not block local development.
 
-After each rehearsal, write a short retrospective: what helped, what wasted time, what
+After a meaningful delivery or retrospective, write a short retrospective: what helped, what wasted time, what
 remained hard to explain, and one adjustment to try next. Track time to first working
 slice, rework after QA, waiting/coordination time, and optional token usage if the tool
 actually reports it. Improve the harness based on observations rather than adding a rule

@@ -1,6 +1,6 @@
 ---
-name: interview-ui-design
-description: Design interview UI in Paper MCP with PM and developer collaboration, agree redlines, and review the implemented interface against them.
+name: engineering-ui-design
+description: Design application UI in Paper MCP with PM and developer collaboration, agree redlines, and review the implemented interface against them.
 ---
 
 Read the active session, `ai_team/ux/AGENTS.md`, and `docs/paper-design.md` from the
@@ -16,12 +16,13 @@ guide before other Paper tools. If absent, disclose the missing connection; the 
 file and dependency declaration do not install a server or guarantee worker access.
 Use the current host's tools to discover the connection; never invent an endpoint.
 
-Find the ai-interview project with list_resources. Reuse the session's recorded file
-if it exists; otherwise create a distinctly named exercise file in that project.
+Resolve the session-selected project with list_resources. Reuse its recorded file
+if it exists; otherwise create a distinctly named task file in the selected project.
+If no destination is selected, agree one before mutating a canvas.
 Create the project if absent and supported. Open the intended file, inspect basic
 info and selection, and record file/page references in session `design.md`.
 If tools only support the current canvas, have the user open/create the intended
-interview file and verify it before editing. Keep one UX writer per artboard.
+design file and verify it before editing. Keep one UX writer per artboard.
 
 ## PM–UX–developer design loop
 
@@ -31,7 +32,7 @@ feasibility or implementation work. Do not spawn extra workers merely to run thi
 
 1. PM supplies acceptance IDs, behavior, constraints and open decisions. Developer
    inspects existing components, styling conventions and data/API contracts. UX
-   proposes the journey and a short design brief; do not invent the interview task.
+   proposes the journey and a short design brief; do not invent requirements.
 2. Follow Paper's current guide for typography checks, existing tokens, brief before
    visual mutations, incremental creation and screenshot review. Use explicit file/page
    IDs. Keep exploration separate from agreed redlines; do not mark a page approved

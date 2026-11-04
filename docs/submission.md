@@ -1,6 +1,6 @@
 # Check-in, code review, test deployment and submission
 
-The demonstrable loop is: implement a bounded slice → inspect/test → independent CR
+The delivery loop is: implement a bounded slice → inspect/test → independent CR
 → fix and recheck → commit → integrate → verify the combined candidate → run/QA →
 submit by the agreed route. A single component skips unnecessary integration work.
 The human can see the meaningful diff, review findings, test evidence and Git history.
@@ -10,7 +10,7 @@ The human can see the meaningful diff, review findings, test evidence and Git hi
 Record the implementation repo, worktree, branch, agreed destination/base, head/tree,
 dependencies and acceptance IDs. Decide whether the deliverable is a local demo,
 pushed branch, PR or merge; remote deployment is a separate choice. Do not assume the
-interviewer wants a PR or that their repository uses our branch names.
+task requires a PR or that their repository uses our branch names.
 For parallel sections, use [the worktree procedure](worktrees.md).
 
 ## 2. Review and check in
@@ -26,7 +26,7 @@ change. Inspect the staged diff and stage explicit paths. Commit coherent work w
 a message describing behavior. Record the resulting SHA and verify that its content
 matches the reviewed snapshot. If content changed during staging/commit, re-review the
 changed scope. A draft commit can freeze work for review but is not acceptance.
-One independent reviewer is the interview default. Coordinator oversight is useful
+One independent reviewer is the default. Coordinator oversight is useful
 but is not a second independent review when that coordinator helped implement.
 
 ## 3. Codex review options
@@ -72,13 +72,13 @@ Delivery integrates accepted commits in dependency order. QA executes relevant c
 on the resulting candidate; reviewer checks cross-component behavior and any resolution
 changes. Re-read the actual integration head and destination base before submission.
 
-Use `interview-test-deploy` to run the application. The default destination is a local
+Use `engineering-test-deploy` to run the application. The default destination is a local
 test environment. Record install/build/start commands, actual source state, dependency
 state, port, process/run identity, readiness/smoke results and stop command. Give parallel
 worktrees distinct ports and test data; check existing runs before starting replacements.
 For an authorized remote preview, follow the target's existing pipeline and record
 request/build ID, artifact/source and actual serving URL/revision. Do not invent a
-cloud deployment procedure or import the internal Esse builder.
+cloud deployment procedure or import unrelated internal deployment tooling.
 
 QA tests acceptance examples against that running candidate, including critical failure
 paths and component seams. UX/QA review UI against the selected Paper redlines. A server
@@ -102,5 +102,5 @@ session notes or the entire harness. Follow the target's actual protection/appro
 rules for an authorized merge; verify the resulting SHA. A push is not a merge, a merge
 is not a deployment, and a deployment is not human acceptance.
 
-Reserve the final minutes for demonstration and limitations. Do not spend a timed
-interview waiting for an optional remote review or building release infrastructure.
+Reserve the final minutes for demonstration and limitations. Do not block useful work waiting for optional remote review or build release
+infrastructure beyond the agreed delivery needs.

@@ -31,6 +31,18 @@ checkpoint. The lead owns this loop and recommends the next step; you resolve
 consequential product and architecture choices. Routine agreed execution stays autonomous.
 Use this model for the actual problem, then refine it from observed results.
 
+## Pairing when you want it
+
+Say “pair with me” for closer discussion and smaller changes you can inspect together.
+For example:
+
+> Pair with me on this task. Help me reason through the approach, keep changes small
+> enough to explain, and work through verification with me. Delegate only when useful.
+
+Say “take this checkpoint and run with it” for more autonomy, or “slow down and walk
+me through this” for more involvement. This is a preference within the same workflow;
+the behavior is defined once in [AGENTS.md](AGENTS.md#pair-with-me).
+
 ## Start here
 
 Give the agent the task and the paths in [the opening prompt](prompts/start.md).

@@ -2,6 +2,7 @@ Harness: [absolute harness path]
 Implementation repository/worktree: [absolute path; same as harness for standalone]
 Task: [problem and desired outcome]
 Time or resource constraints: [if any]
+Collaboration preference: [optional: pair with me, or run with agreed checkpoints]
 
 Read the harness AGENTS.md and the matching setup in README. Use engineering-spec
 for the design discussion. I am the PE/product owner; work directly with me as lead.

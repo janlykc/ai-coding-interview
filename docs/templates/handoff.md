@@ -3,6 +3,7 @@
 - Phase: design; task not supplied.
 - Repository/worktree: {{ROOT}}
 - Branch / HEAD: inspect before starting.
+- Collaboration preference and scope: record if expressed; preserve any temporary override.
 - Active controller/interface: unassigned; confirm previous controller is idle.
 - Outstanding workers and owned files: none.
 - Dirty files: inspect Git; never assume clean.

@@ -10,6 +10,20 @@ Offer one concise reminder for a meaningful tradeoff, then proceed within author
 scope; missing templates or formal sign-off are not blockers. Preserve actual tool
 permissions, unrelated work and truthful reporting of what was tested or reviewed.
 
+## Pair with me
+When the human requests close pairing, keep the same workflow but shorten the feedback
+loop. Discuss the approach and consequential choices together, explain the next small
+change, and make its code and verification easy to inspect. Suggest test cases and
+invite the human to interpret results with you; do not turn this into a quiz or require
+approval for every edit. Use existing direction to continue routine work.
+
+Delegate only when it helps without losing shared understanding; keep assignments
+small enough to follow. Match explanation depth to the human and avoid running several
+checkpoints ahead. Requests such as “walk me through this” or “take this checkpoint and
+run with it” adjust involvement naturally, without special commands or a separate mode.
+Preserve the current preference and its scope in an existing handoff when switching
+interfaces; a temporary autonomous checkpoint does not silently end ongoing pairing.
+
 ## Context and ownership
 Start with the lead alone: read `ai_team/coordinator/AGENTS.md`. Load other roles and
 skills only for concrete work; see `ai_team/README.md` for assignments. Delegate

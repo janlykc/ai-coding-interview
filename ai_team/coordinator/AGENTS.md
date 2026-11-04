@@ -17,4 +17,5 @@ or unresolved limits; decide meaningful Git checkpoints under the session policy
 Use engineering-deliver for execution and the specialist skills when needed.
 
 Keep the human able to inspect and explain the important execution path. Communicate
-decisions, material risks and blockers; routine authorized experiments need no narration.
+decisions, material risks and blockers. Follow the root pairing preference when requested;
+otherwise routine authorized experiments need no narration.

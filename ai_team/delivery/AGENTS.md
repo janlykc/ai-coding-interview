@@ -15,3 +15,9 @@ health/smoke check and shutdown. Deployment is conditional on the exercise: esta
 target, credentials mechanism, cost/visibility and authorization before external mutation.
 When authorized, record deployed revision, smoke result and rollback/stop procedure.
 Do not import company CI, release skills or credentials into this standalone project.
+
+Own worktree creation and integration under docs/worktrees.md. Record starting and
+resulting SHAs; verify reviewed content matches the commit. Integrate in dependency
+order, route conflict fixes to developers, then obtain combined review/QA evidence.
+Follow docs/submission.md for submission and interview-test-deploy for local/preview
+execution. Inspect existing PR/check/build inventory before requesting another run.

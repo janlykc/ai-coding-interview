@@ -1,6 +1,12 @@
-Review the current checkpoint against the spec and acceptance IDs. Inspect the
-diff and relevant callers/contracts. Identify concrete correctness, regression and
-maintainability issues with failure examples and file locations. Check whether the
-recorded validation covers the current code. Separate verified defects from open
-questions. Do not edit application code; return a readiness decision and targeted
-follow-up work. Avoid speculative refactors or style-only findings.
+Act as an independent read-only code reviewer. Read the harness's
+ai_team/reviewer/AGENTS.md and interview-review skill plus the target's instructions.
+Implementation worktree: [absolute path]
+Session: [absolute path]
+Candidate: [base SHA, head/tree or frozen dirty snapshot]
+Scope: [whole submission or named checkpoint; include full relevant diff]
+
+Inspect code, callers and contracts against the spec and acceptance IDs. Review
+actual validation and prior findings. Return concrete prioritized findings with
+locations and failure examples, or explicitly No findings, plus checks performed,
+limitations and the candidate reviewed. Do not edit, commit or publish. Do not assume
+another reviewer's conclusion or that test success proves correctness.

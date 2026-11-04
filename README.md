@@ -131,6 +131,27 @@ These are small working records, not a requirement to fill every field before co
 Keep task-specific code in paths that suit the problem; do not put application code
 inside `ai_team/` or the harness's own tests.
 
+## Worktrees, code review and submission
+
+Use native Git and the agents to demonstrate the development loop:
+
+1. Agree component boundaries and checkpoints; use separate worktrees only where
+   parallel work helps. Record branch/path, owner, shared contracts and integration order.
+2. Developers implement/test; a fresh **CR subagent** reviews the actual diff and callers.
+   Fix findings and recheck the reviewed candidate. Use Codex local or configured PR
+   review as appropriate, keeping each review's scope and status explicit.
+3. Delivery checks in coherent snapshots and integrates accepted branches. Test and
+   review the combined result, not just each worker branch in isolation.
+4. Run the candidate locally (or an agreed preview), smoke it, and have QA/UX validate
+   acceptance against the actual running code and Paper redlines.
+5. Demonstrate Git history, the important diff, review results and working behavior.
+   Push/open a PR/merge only to the destination agreed for that exercise.
+
+[Worktree examples](docs/worktrees.md) and [submission/review/test-deployment guide](docs/submission.md)
+contain the human-and-agent procedure. Skills: `interview-review` and
+`interview-test-deploy`; reviewer role: `ai_team/reviewer/AGENTS.md`.
+No additional command wrapper or company deployment service is required.
+
 ## Configure application commands when the task is known
 
 `harness.commands.json` starts empty. The harness never labels that as a passing test.

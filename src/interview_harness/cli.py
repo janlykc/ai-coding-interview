@@ -258,6 +258,7 @@ def doctor(root: Path) -> int:
             f"ai_team/{role}/AGENTS.md"
             for role in [
                 "coordinator",
+                "reviewer",
                 "program_manager",
                 "scribe",
                 "developer",
@@ -273,6 +274,8 @@ def doctor(root: Path) -> int:
                 "interview-deliver",
                 "interview-handoff",
                 "interview-ui-design",
+                "interview-review",
+                "interview-test-deploy",
             ]
         ],
     ]:

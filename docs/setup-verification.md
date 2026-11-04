@@ -48,3 +48,34 @@ interview-ui-design skill and explicit PM/UX/developer ownership, plus scoped
 in-session maintenance of learned working agreements. Actual worker/IDE tool access
 still needs verification in that worker/interface; a dependency declaration alone
 does not establish that access.
+
+## Submission and worktree workflow
+
+Added independent reviewer instructions, interview-review and interview-test-deploy
+skills, native Git worktree/integration guidance, review/submission templates and a
+README walkthrough. Reference inspection used the installed esse-release source at
+b4422849b889548116b87083e1b9d0bdd7431eb0 and esse-test-deploy source at
+d3d3eea350bb7c9cf93f28c6d9d00af5cd426df8, plus the existing backend reviewer rubric.
+Adapted principles only: independent current-candidate review, one execution owner,
+dependency order, precise evidence and distinct source/delivery/acceptance milestones.
+Internal release authority, cloud tooling, provider fallback rules and credentials
+were not imported into the interview workflow.
+
+Verification on 2026-11-03:
+
+- Disposable Git rehearsal: committed baseline, two distinct worker branches/worktrees,
+  dependency-order integration, successful combined behavior assertion, preservation
+  of unrelated dirty work, and non-forced removal of integrated worker worktrees.
+- `make check`: lint/format, 14 harness tests, package build and doctor passed.
+- All six skills passed structural validation; local documentation links were checked.
+- `codex review --help` verified the documented local scope flags with CLI 0.144.6.
+  No live CLI/provider review or remote test deployment was performed in this exercise.
+
+Independent CR receipt: review_submission_workflow, separate from the implementer,
+reviewed the tracked changes from f127302d50647eb40e0fd0edf21b36c4b78073cc and the
+new reviewer role, skills, worktree/submission guides and templates. Verdict: No findings.
+The reviewed tracked-diff SHA-256 was
+115a959ca47e778648e8a1661fc5f3038d3fe544844512aee8effc19d25cb6e1.
+The reviewer inspected instructions and ran diff checks; it did not independently run
+the Git rehearsal, provider review or deployment. This verification-note addition is
+subsequent documentation, not part of that frozen review. No finding required repair.

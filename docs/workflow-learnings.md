@@ -30,3 +30,8 @@ Remove superseded advice instead of accumulating contradictory rules. Do not tur
 one-off task constraint into a universal rule, add new bureaucracy, or change global
 machine settings as a side effect. This is an in-session practice, not a background
 monitor or a claim that every conversation is automatically observed.
+
+Submission/worktree refinement (2026-11-03): preserve the useful release habits—one
+owner per mutation, independent review of the current candidate, dependency-order
+integration, and QA of the actual running code—using native Git and lightweight
+session records. Do not transplant company-specific admission or cloud infrastructure.

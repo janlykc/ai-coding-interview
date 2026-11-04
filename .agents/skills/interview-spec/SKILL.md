@@ -35,3 +35,8 @@ For a task with UI, use interview-ui-design and the PM–UX–developer group. P
 the default canvas, with access verified in the UX worker. PM owns requirements; UX
 owns design.md and redlines; dev supplies feasibility. Reference agreed designs in
 the spec and plan before implementing the relevant UI checkpoint.
+
+When planning parallel sections, agree component contracts and dependencies before
+splitting worktrees. Record each owner/path/base, integration order, CR checkpoint,
+test environment and intended submission finish line. Prefer one checkout when the
+coordination cost outweighs useful independent work. See docs/worktrees.md.

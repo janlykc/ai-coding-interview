@@ -11,6 +11,7 @@ selected repository root and pass the role path in its assignment.
 | [Program manager](program_manager/AGENTS.md) | Design or scope changes | Spec and acceptance criteria |
 | [Scribe](scribe/AGENTS.md) | Decisions need recording | Concise decision log; may be combined with PM |
 | [Developer](developer/AGENTS.md) | Investigation or implementation | Python/frontend and existing code; component-specific assignment |
+| [Reviewer](reviewer/AGENTS.md) | Code ready for review | Independent CR and findings, separate from implementation |
 | [QA](qa/AGENTS.md) | Verification | Independent behavior checks and evidence |
 | [UX](ux/AGENTS.md) | UI is material | Paper design/redlines and visual/accessibility review |
 | [Delivery](delivery/AGENTS.md) | Commit, push or environment work | Git execution, local run, optional deployment |

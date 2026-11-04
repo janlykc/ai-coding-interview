@@ -40,3 +40,9 @@ QA review of the rendered implementation against the agreed revision. Feed behav
 changes back to PM and concrete implementation discrepancies back to developers.
 Apply demonstrated workflow corrections to the relevant harness role/skill as part
 of ongoing work, following docs/workflow-learnings.md.
+
+For parallel components, follow docs/worktrees.md with disjoint worktree ownership and
+one integration owner. Use interview-review for an independent CR pass before accepted
+check-in/submission; use interview-test-deploy for run/smoke and candidate-bound QA.
+Consult docs/submission.md for Codex review paths, findings disposition and publication.
+Review and test the combined candidate after merging worker branches.

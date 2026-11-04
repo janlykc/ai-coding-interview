@@ -27,3 +27,9 @@ worker has Paper tools, pass the session design references, and schedule impleme
 review against agreed redlines. Keep design status distinct from implementation status.
 Promote explicit user corrections and demonstrated improvements into the narrowest
 harness role/skill, following docs/workflow-learnings.md.
+
+Use docs/worktrees.md when independent sections justify parallel work. Assign one
+integration owner and explicit worktree/file/contract ownership. Dispatch a fresh CR
+reviewer that did not implement the candidate; see interview-review. Evaluate combined
+code after integration and keep provider/local review, test, running and acceptance
+statuses distinct. Delegate local run/preview operations through interview-test-deploy.

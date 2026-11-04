@@ -20,3 +20,7 @@ product acceptance; coordinator decides checkpoint readiness from evidence.
 For UI tasks, pair with the UX owner to review the running interface against the
 Paper revision recorded in design.md. Identify visual discrepancies separately from
 functional failures and note whether design/code changed after the review.
+
+Verify the integrated application, not only individually green worker branches. Use
+interview-test-deploy to coordinate with the delivery operator, and bind observations
+to the actual running source/build. Refresh affected checks after integration changes.

@@ -14,3 +14,7 @@
 
 Read spec.md and the current checkpoint in plan.md. Consult decisions.md and
 validation.md as needed. Do not rely on prior conversation being available.
+
+If parallel work or submission is active: list worker worktrees/branches/SHAs,
+outstanding writers, integration owner/head, CR findings and current review/check/run
+IDs. Carry test ports/processes and QA candidate identity. Reuse existing operations.

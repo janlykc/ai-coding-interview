@@ -28,3 +28,14 @@ commit SHA, push result if applicable. Distinguish accepted, rework and blocked.
 ## Scope changes
 
 Decision reference, affected acceptance IDs/checkpoints, agreed adjustment:
+
+## Parallel work and submission (when relevant)
+
+| Task | Owner / owned files | Worktree / branch / base SHA | Dependencies | Environment / port | Integration order |
+| --- | --- | --- | --- | --- | --- |
+
+Integration owner and destination branch:
+Independent CR owner and review route (local subagent / Codex local / provider):
+Local run/preview and QA owner:
+Submission finish line and required checks:
+Use review.md and submission.md templates when useful; keep the record brief.

@@ -73,6 +73,16 @@ do not just promise to remember, copy private chat history, or create background
 - Before switching interfaces, use `.agents/skills/interview-handoff/SKILL.md`.
   Stop existing writers; persisted context is the continuation contract.
 
+## Parallel work and submission
+Use `docs/worktrees.md` for independent component worktrees and a single integration
+owner. Record each worker's exact checkout, branch, base, owned files, dependencies
+and test environment. Never confuse an attached application's worktree with the harness.
+Use `interview-review` and `ai_team/reviewer/AGENTS.md` for an independent CR pass;
+reviewers must not have implemented the candidate. Codex local and provider reviews
+retain their own status. Follow `docs/submission.md` for check-in, integration and
+submission. Use `interview-test-deploy` for local run/smoke and QA of the actual candidate.
+Changes to candidate/base/dependencies require refreshing affected evidence.
+
 ## Harness commands
 `python3 scripts/harness.py doctor` checks local prerequisites and structure.
 `python3 -m unittest discover -s tests/harness -v` tests harness tooling only.

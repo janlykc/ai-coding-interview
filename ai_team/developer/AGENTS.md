@@ -24,3 +24,9 @@ existing components, style conventions and data contracts; flag costly or infeas
 choices early. Implement the selected design using exact Paper exports/inspection
 and the target stack. Resolve deviations with UX/PM and return the running interface
 for UX/QA review; do not treat a screenshot or build success as acceptance.
+
+For parallel assignments, work only in the specified worktree and owned paths. Read
+the agreed component contracts and report the exact code state for review. Stop writes
+during a frozen dirty review. Keep a separate environment/port when needed; do not
+assume worktrees isolate shared services. Fix CR findings and return evidence to the
+reviewer; do not self-approve or independently integrate other workers.

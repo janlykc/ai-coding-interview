@@ -3,6 +3,12 @@ name: interview-spec
 description: Turn an interview task into an agreed concise specification and checkpoint implementation plan before coding, or revise them when requirements change.
 ---
 
+In attached mode, read the session's `context.json` first. Resolve role/skill paths
+from `harness_root`, specs/plans/evidence summaries from `session_root`, and code,
+commands and Git operations from `target_root`. Preserve the target's instructions.
+Explicitly pass these paths to workers; do not assume cross-repository discovery.
+
+
 Read root `AGENTS.md` and the active session. Resolve repository-relative paths from
 the repository root. Use `docs/templates/` via `scripts/harness.py new-session` if needed.
 

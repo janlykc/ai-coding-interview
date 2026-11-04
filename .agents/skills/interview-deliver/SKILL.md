@@ -3,6 +3,12 @@ name: interview-deliver
 description: Coordinate implementation, independent verification, code review and Git checkpoints against an agreed interview specification and plan.
 ---
 
+In attached mode, read the session's `context.json` first. Resolve role/skill paths
+from `harness_root`, specs/plans/evidence summaries from `session_root`, and code,
+commands and Git operations from `target_root`. Preserve the target's instructions.
+Explicitly pass these paths to workers; do not assume cross-repository discovery.
+
+
 Read root `AGENTS.md`, `ai_team/coordinator/AGENTS.md` and the active session's spec,
 plan and handoff. If agreement or critical requirements are missing, return to design.
 

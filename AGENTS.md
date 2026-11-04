@@ -1,6 +1,6 @@
 # AI coding interview working agreement
 
-This is a standalone interview harness. Work only in the selected repository;
+This is a standalone interview harness. Work only in the selected implementation checkout and session records;
 parent-workspace product instructions and unrelated projects are outside its scope.
 The interview problem and application stack are deliberately unknown.
 
@@ -10,6 +10,19 @@ Read `docs/ACTIVE_SESSION` if present, then that session's `handoff.md`,
 working-tree changes, active writer and available time before editing. If there
 is no session, use `python3 scripts/harness.py new-session <slug>` and begin design.
 For harness maintenance, work directly on the harness; no exercise session is needed.
+
+## Attached repository mode
+When the session has `context.json` with `mode: attached`, `target_root` is the
+implementation checkout and `harness_root` provides supporting instructions only.
+Read the target's applicable instructions first; preserve its stack, conventions and
+requirements. Resolve harness role/skill paths from `harness_root`, application paths
+from `target_root`, and planning records from `session_root`. Pass these absolute paths
+to every worker; their application working directory must be the target.
+Do not copy this harness into the target or add it as a dependency. Surface genuine
+instruction conflicts. Application commits/pushes use the target's Git policy, never
+the harness remote. Run the target's native tests and record target code identity.
+Attachment records are local/ignored by default; export only agreed deliverables to
+the target. See `docs/existing-repository.md`.
 
 ## Ownership
 The human is principal engineer, product owner and primary stakeholder. They own

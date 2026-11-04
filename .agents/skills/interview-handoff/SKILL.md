@@ -3,6 +3,12 @@ name: interview-handoff
 description: Save or resume an interview session across Codex desktop, VS Code or a fresh chat using repository context and a single active writer.
 ---
 
+In attached mode, read the session's `context.json` first. Resolve role/skill paths
+from `harness_root`, specs/plans/evidence summaries from `session_root`, and code,
+commands and Git operations from `target_root`. Preserve the target's instructions.
+Explicitly pass these paths to workers; do not assume cross-repository discovery.
+
+
 Read root `AGENTS.md` and `docs/ACTIVE_SESSION`. On save, stop or finish outstanding
 worker writes before transferring ownership. Update the active session's `handoff.md`
 with repository/worktree path, branch, HEAD, dirty files, current interface/owner,

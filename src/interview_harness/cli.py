@@ -48,10 +48,10 @@ def code_state(root: Path) -> dict:
     }
 
 
-def new_session(root: Path, name: str) -> Path:
+def new_session(root: Path, name: str, *, attached: bool = False) -> Path:
     if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", name):
         raise ValueError("Use lowercase letters, digits and single hyphens for the session name.")
-    destination = root / "docs" / "sessions" / name
+    destination = root / (".harness/sessions" if attached else "docs/sessions") / name
     # Read templates before mutation; existing sessions are never overwritten.
     contents = {
         item: (root / "docs" / "templates" / f"{item}.md")
@@ -63,7 +63,7 @@ def new_session(root: Path, name: str) -> Path:
     destination.mkdir(parents=True, exist_ok=False)
     for item, content in contents.items():
         (destination / f"{item}.md").write_text(content)
-    (root / "docs" / "ACTIVE_SESSION").write_text(f"docs/sessions/{name}\n")
+    (root / "docs" / "ACTIVE_SESSION").write_text(str(destination.relative_to(root)) + "\n")
     return destination
 
 
@@ -73,9 +73,96 @@ def active_session(root: Path) -> str:
         return "none (start with new-session <slug>)"
     relative = pointer.read_text().strip()
     target = (root / relative).resolve()
-    if not target.is_relative_to((root / "docs" / "sessions").resolve()) or not target.is_dir():
-        raise ValueError("ACTIVE_SESSION must point to an existing folder under docs/sessions.")
+    if (
+        not any(
+            target.is_relative_to((root / folder).resolve())
+            for folder in ("docs/sessions", ".harness/sessions")
+        )
+        or not target.is_dir()
+    ):
+        raise ValueError("ACTIVE_SESSION must point to an existing harness session folder.")
     return relative
+
+
+def attach_repository(root: Path, target: Path, name: str) -> Path:
+    root, target = root.resolve(), target.expanduser().resolve()
+    if not target.is_dir():
+        raise ValueError("Target must be an existing Git checkout; clone it first.")
+    top = git(target, "rev-parse", "--show-toplevel")
+    if top == "unavailable" or Path(top).resolve() != target:
+        raise ValueError("Pass the target Git/worktree root, not a subdirectory.")
+    if target.is_relative_to(root) or root.is_relative_to(target):
+        raise ValueError("Use separate, non-nested target and harness checkouts.")
+    session = new_session(root, name, attached=True)
+    context = {
+        "mode": "attached",
+        "harness_root": str(root),
+        "target_root": str(target),
+        "session_root": str(session),
+        "target_branch_at_attach": git(target, "branch", "--show-current"),
+        "target_head_at_attach": git(target, "rev-parse", "HEAD"),
+    }
+    (session / "context.json").write_text(json.dumps(context, indent=2) + "\n")
+    prompt = f"""Work in attached-repository mode. I am the PE/product owner.
+Implementation checkout: {target}
+Support harness: {root}
+Session and planning records: {session}
+
+First read {session / "context.json"} and {session / "handoff.md"}.
+Inspect the target's applicable AGENTS.md files and project conventions. Read
+{root / "AGENTS.md"} as supporting workflow guidance, and explicitly load
+{root / ".agents/skills/interview-spec/SKILL.md"} for design or
+{root / ".agents/skills/interview-handoff/SKILL.md"} for continuation.
+Resolve role/skill paths from the harness and application paths from the target.
+Use the target's stack, tests, dependencies, branch and remotes. Do not install the
+harness as an application dependency or replace target instructions/configuration.
+Run workers in the target checkout and give each the absolute harness role and
+session paths. Preserve target-specific requirements; raise genuine conflicts.
+Begin design with me, or resume the agreed checkpoint. Do not invent the task.
+"""
+    (session / "start.md").write_text(prompt)
+    handoff = session / "handoff.md"
+    handoff.write_text(
+        handoff.read_text().replace(
+            f"Repository/worktree: {root}", f"Repository/worktree: {target}"
+        )
+        + f"\n## Attached repository\n\n"
+        f"Implementation checkout: {target}\nSupport harness: {root}\n"
+        f"Planning records: {session}\n"
+        "The implementation checkout above is the application worktree. "
+        "Verify its Git state before work. Target files have not been changed.\n"
+    )
+    plan = session / "plan.md"
+    plan.write_text(
+        plan.read_text().replace(
+            "configure harness.commands.json", "use target-native commands (not the harness runner)"
+        )
+        + f"\nImplementation Git checkout: {target}\n"
+        + f"Initial branch: {context['target_branch_at_attach']}\n"
+        + "Confirm target remote and authorization before pushing.\n"
+    )
+    workspace = session / "interview.code-workspace"
+    workspace.write_text(
+        json.dumps(
+            {
+                "folders": [
+                    {"name": "implementation", "path": str(target)},
+                    {"name": "support-harness", "path": str(root)},
+                ],
+                "settings": {"workbench.startupEditor": "none"},
+            },
+            indent=2,
+        )
+        + "\n"
+    )
+    return session
+
+
+def attached_context(root: Path) -> dict | None:
+    if not (root / "docs/ACTIVE_SESSION").exists():
+        return None
+    path = root / active_session(root) / "context.json"
+    return json.loads(path.read_text()) if path.exists() else None
 
 
 def command_steps(root: Path, name: str) -> list[dict]:
@@ -108,6 +195,11 @@ def command_steps(root: Path, name: str) -> list[dict]:
 
 
 def run_command(root: Path, name: str) -> int:
+    if attached_context(root):
+        raise ValueError(
+            "Attached mode: run application commands in the target checkout, "
+            "then record target code state and results in session validation.md."
+        )
     steps = command_steps(root, name)  # Validate all steps before executing any.
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S.%fZ")
     evidence = root / ".harness" / "evidence" / f"{stamp}-{name}"
@@ -208,6 +300,9 @@ def main(argv=None) -> int:
     subs.add_parser("status")
     session = subs.add_parser("new-session")
     session.add_argument("name")
+    attach = subs.add_parser("attach", help="Use this harness alongside an existing checkout")
+    attach.add_argument("target", type=Path)
+    attach.add_argument("--session", required=True)
     run = subs.add_parser("run")
     run.add_argument("name", choices=["test", "lint", "build", "dev"])
     args = parser.parse_args(argv)
@@ -217,9 +312,22 @@ def main(argv=None) -> int:
             return doctor(root)
         if args.action == "new-session":
             print(new_session(root, args.name))
+        elif args.action == "attach":
+            session_path = attach_repository(root, args.target, args.session)
+            print(f"Workspace: {session_path / 'interview.code-workspace'}")
+            print(f"Start/resume prompt: {session_path / 'start.md'}")
         elif args.action == "status":
             print(f"Active session: {active_session(root)}")
-            print(json.dumps(code_state(root), indent=2))
+            context = attached_context(root)
+            if context:
+                print(json.dumps(context, indent=2))
+                target = Path(context["target_root"])
+                if not target.is_dir():
+                    raise ValueError("Attached target is missing; restore the checkout path.")
+                print("Target Git state:")
+                print(json.dumps(code_state(target), indent=2))
+            else:
+                print(json.dumps(code_state(root), indent=2))
         else:
             return run_command(root, args.name)
         return 0

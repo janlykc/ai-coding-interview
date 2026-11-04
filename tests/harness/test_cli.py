@@ -11,6 +11,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
 from interview_harness.cli import (  # noqa: E402
     TEMPLATES,
     active_session,
+    attach_repository,
+    attached_context,
     command_steps,
     new_session,
     root_from,
@@ -31,6 +33,49 @@ class HarnessTests(unittest.TestCase):
         for name in TEMPLATES:
             (templates / f"{name}.md").write_text("{{SESSION}} {{ROOT}}")
         subprocess.run(["git", "init", "-q", str(self.root)], check=True)
+
+    def target_repo(self):
+        temp = tempfile.TemporaryDirectory()
+        self.addCleanup(temp.cleanup)
+        target = Path(temp.name).resolve()
+        subprocess.run(["git", "init", "-q", str(target)], check=True)
+        (target / "AGENTS.md").write_text("target instructions")
+        return target
+
+    def test_attachment_preserves_target_and_binds_workspace(self):
+        target = self.target_repo()
+        before = subprocess.check_output(["git", "-C", str(target), "status", "--porcelain"])
+        session = attach_repository(self.root, target, "provided-task")
+        self.assertEqual((target / "AGENTS.md").read_text(), "target instructions")
+        self.assertEqual(
+            before, subprocess.check_output(["git", "-C", str(target), "status", "--porcelain"])
+        )
+        context = attached_context(self.root)
+        self.assertEqual(context["target_root"], str(target))
+        workspace = json.loads((session / "interview.code-workspace").read_text())
+        self.assertEqual(workspace["folders"][0]["path"], str(target))
+        self.assertIn(str(target), (session / "start.md").read_text())
+        self.assertTrue(session.is_relative_to(self.root.resolve() / ".harness"))
+        with self.assertRaises(FileExistsError):
+            attach_repository(self.root, target, "provided-task")
+
+    def test_attached_runner_refuses_wrong_repository_and_standalone_resumes(self):
+        attach_repository(self.root, self.target_repo(), "provided-task")
+        self.configure([{"argv": [sys.executable, "-c", "raise SystemExit(0)"]}])
+        with self.assertRaisesRegex(ValueError, "Attached mode"):
+            self.run_quiet()
+        new_session(self.root, "standalone")
+        self.assertIsNone(attached_context(self.root))
+        self.assertEqual(self.run_quiet(), 0)
+
+    def test_attachment_rejects_non_repo_subdirectory_and_nested_target(self):
+        target = self.target_repo()
+        sub = target / "sub"
+        sub.mkdir()
+        for candidate in (self.root, sub, Path(self.temp.name) / "missing"):
+            with self.subTest(candidate=candidate), self.assertRaises(ValueError):
+                attach_repository(self.root, candidate, "invalid")
+        self.assertFalse((self.root / "docs/ACTIVE_SESSION").exists())
 
     def configure(self, steps):
         (self.root / "harness.commands.json").write_text(json.dumps({"test": steps}))

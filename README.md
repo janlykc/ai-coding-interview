@@ -44,6 +44,19 @@ VS Code: **Terminal → Run Task → Harness: doctor** or **Harness: new session
 The workspace recommends the Codex and Python extensions; JavaScript/TypeScript
 editing is built into VS Code. Authentication and model selection remain yours.
 
+## Given an existing repository?
+
+Clone it alongside this harness, then run from the harness:
+
+```sh
+.venv/bin/interview attach /absolute/path/to/provided-repo --session interview-01
+```
+
+Open the printed workspace and paste the printed `start.md` into a chat working on
+the provided repo. Agents use the harness roles but implement and test in the target.
+Nothing is installed into or changed in the supplied repository by attachment.
+See [existing-repository mode](docs/existing-repository.md) for the complete workflow.
+
 ## Workflow and files
 
 | Stage | Owner | Durable output |
@@ -60,7 +73,8 @@ testing, review, deployment and pacing. [IDE setup](docs/ide-setup.md) covers
 continuation and existing-repository exercises. [Interview preparation](docs/interview-prep.md)
 records the supplied guide's constraints and a rehearsal checklist.
 
-`docs/ACTIVE_SESSION` points to the current folder in `docs/sessions/`. Each session
+`docs/ACTIVE_SESSION` is a local pointer to the current session. Standalone sessions
+live in `docs/sessions/`; attached sessions live in ignored `.harness/sessions/`. Each session
 contains a spec, implementation plan, decisions, validation, handoff and retrospective.
 These are small working records, not a requirement to fill every field before coding.
 Keep task-specific code in paths that suit the problem; do not put application code

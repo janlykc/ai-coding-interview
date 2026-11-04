@@ -30,3 +30,11 @@ Workspace/task JSON and local Markdown links were checked.
 Delivery: the initial baseline is committed to this repository. Consult Git history and
 `git status --short --branch` for the current commit and remote tracking state. No live
 interview session or application is bundled into the reusable baseline.
+
+## Attached repository mode
+
+Added an `attach` command with local session context, a two-folder workspace and
+an explicit start/resume prompt. Its tests verify preservation of target files/Git
+status, non-overwrite, invalid target rejection, prevention of running support-repo
+checks as application checks, and switching back to standalone mode. The full suite
+now contains 14 tests. No real interviewer repository has been attached or modified.

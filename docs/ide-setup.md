@@ -37,14 +37,13 @@ fails, explicitly ask the agent to read `.agents/skills/<name>/SKILL.md`.
 
 ## If given an existing repository
 
-Preserve its instructions, manifests and Git history. Open it separately and inspect
-before changing it. With task permission, copy `ai_team/`, relevant skills and session
-templates into non-conflicting paths; merge the concise harness working agreement into
-its existing AGENTS.md rather than replacing it. Resolve collisions deliberately.
-Alternatively keep the harness as a reference folder and explicitly pass absolute role
-and session paths. Skills in this harness are not automatically discovered from a different
-Git root. Record the target checkout and command locations in the handoff; use the target's
-native commands if the harness runner is not installed there.
+Use the [attached-repository workflow](existing-repository.md). The `attach` command
+creates a two-folder workspace and explicit bootstrap prompt without editing the target.
+Open a Codex chat on the implementation checkout, and paste the generated prompt so it
+can explicitly read the support harness. Cross-repository instructions/skills are not
+automatically inherited. If access to the support directory is unavailable, grant that
+folder through the host's normal access controls or supply the relevant instructions
+explicitly; do not silently proceed without the agreed context.
 
 ## Sources checked during setup, 2026-11-03
 

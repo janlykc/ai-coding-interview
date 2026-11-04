@@ -12,12 +12,13 @@ prompts/start.md with the actual paths and question. Allow 60–75 minutes, matc
 the interview guide. Check sign-in and relevant tools before starting the clock.
 
 You supply the outcome, priorities, questions and architecture judgment. PM/scribe
-writes the spec. Developer checks feasibility; UX joins in Paper if the problem has
-a UI. Keep the same lead when you agree the first implementation checkpoint.
+joins when the spec needs authoring. Request developer feasibility input or a Paper
+UX pass only when the task needs it. Keep the same lead when you agree the first implementation checkpoint.
 
 ## Run naturally
 
-1. Start with the design discussion. Aim for concrete acceptance examples and a small
+1. Start with the lead alone and the design discussion. Load skills and spawn
+   subagents only as their work becomes necessary. Aim for concrete acceptance examples and a small
    first slice. Let your questions sharpen the redlines; do not manually author the spec.
 2. Let the coordinator dispatch implementation. Use separate worktrees if the problem
    has useful independent sections, not merely to exercise the feature.

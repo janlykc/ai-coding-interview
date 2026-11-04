@@ -5,8 +5,10 @@ Read the harness README.md and AGENTS.md, follow the matching standalone/attache
 mode, and explicitly read .agents/skills/interview-spec/SKILL.md from the harness.
 I am the principal engineer, product owner and primary stakeholder.
 You are the engineering lead, becoming coordinator after we agree the plan.
-Use a PM/scribe to author the spec and developer input to ground it in the code.
-Keep coordination proportional to the time available; use the role files in ai_team.
+Start as the lead alone. Treat ai_team as an on-demand library: load only the
+current skill and needed role, and spawn subagents only for concrete assignments.
+Bring in PM/scribe for spec authorship and developer input when investigation is
+needed. Do not preload or launch the whole team at startup or at phase transitions.
 Clarify consequential ambiguities, recommend defaults and challenge my assumptions.
 Produce a brief spec and checkpoint plan, including how we will test and demonstrate
 it. Wait for our agreement before implementing. Do not invent a problem if I have

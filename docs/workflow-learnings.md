@@ -8,6 +8,7 @@ They are qualitative working preferences, not measured claims of superiority.
 | --- | --- |
 | Human supplies requirements and questions, then reviews redlines | PM/scribe authors the spec; human keeps product and PE decisions |
 | PM, Paper UX and developers iterate together | UI design uses Paper, with feasibility input before implementation and UX review after |
+| Roles are a library, not a startup team (2026-11-03) | Start with the lead only; load the current skill and delegate concrete work on demand; phase changes do not spawn a roster |
 | Same lead retains useful context | Design lead becomes checkpoint coordinator |
 | Autonomous experiments are useful; decision-critical findings need visibility | Bounded execution with concise decision/evidence updates |
 | Fast delivery still needs confidence in lower layers | Inspect component seams and meaningful evidence; QA complements human acceptance |

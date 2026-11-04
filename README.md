@@ -9,11 +9,13 @@ For an existing codebase, start with [the provided-repository workflow](#using-t
 ## Start here
 
 Give the agent the task and the paths in [the opening prompt](prompts/start.md).
-Begin with your normal design discussion: PM/scribe drafts the spec, developer
-supplies feasibility, and UX joins in Paper for UI work. Agree the first checkpoint;
-the same lead then coordinates implementation and review. Start with a small active
-team, bringing QA/CR in when there is code to inspect. You do not need every role,
-skill, worktree or template at once.
+Start with the lead and your normal design discussion. The roles are an on-demand
+library, not a team loaded at startup. Load only the skill for the current work and
+spawn a subagent when it has a concrete assignment: PM/scribe for spec authorship,
+developer for needed investigation or implementation, UX for meaningful Paper design,
+and independent QA/CR when there is a candidate to evaluate. Agree the first checkpoint;
+the same lead then coordinates implementation and review. A phase change does not
+automatically load more roles, skills, worktrees or templates.
 
 For tomorrow's practice, use [the test-drive plan](docs/test-drive.md). The initial
 [holistic assessment](docs/holistic-assessment.md) distinguishes readiness checks from
@@ -90,7 +92,7 @@ and two-folder workspace described above. The README workflow works without it.
 
 ## UI work: PM + Paper UX + developer
 
-For a UI task, use the established design group: PM authors the spec, UX designs in
+When UI design is needed, involve the established roles on demand: PM authors the spec, UX designs in
 Paper, and developers contribute codebase knowledge and feasibility. Agree the
 important redlines with the human, implement, then have UX/QA review the running UI.
 

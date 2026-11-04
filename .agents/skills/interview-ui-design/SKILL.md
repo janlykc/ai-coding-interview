@@ -25,6 +25,10 @@ interview file and verify it before editing. Keep one UX writer per artboard.
 
 ## PM–UX–developer design loop
 
+These are contributions, not a required simultaneous roster. Use the existing spec
+as PM input; request PM or developer involvement only for unresolved requirements,
+feasibility or implementation work. Do not spawn extra workers merely to run this skill.
+
 1. PM supplies acceptance IDs, behavior, constraints and open decisions. Developer
    inspects existing components, styling conventions and data/API contracts. UX
    proposes the journey and a short design brief; do not invent the interview task.

@@ -48,17 +48,22 @@ readiness; it does not implement application code, run product tests or execute
 experiments. Delegate those tasks. If delegation is unavailable, disclose it and
 agree a sequential developer/QA fallback with the human before changing roles.
 
-## Small active team
-Roles are responsibilities, not a requirement for eight live agents. Follow the
-phase schedule in `ai_team/README.md`: combine PM/scribe, activate UX for UI, and
-release idle workers before bringing in QA/CR. One independent non-implementer may
+## On-demand agent library
+Start with the lead only; do not preload role files or spawn a default team.
+Load the skill for the current work, then delegate only when there is a concrete
+bounded assignment. PM/scribe joins when spec authorship is needed; a developer
+joins for necessary investigation or implementation; UX joins when design work
+warrants it; independent QA/CR joins when there is a candidate to evaluate.
+Phase changes do not automatically spawn agents. Use the activation guidance in
+`ai_team/README.md`; release idle workers before bringing in others. One independent non-implementer may
 perform QA and CR as separate passes. An existing developer may execute delivery
 under coordinator direction after implementation stops. Preserve independence and
 the coordinator's non-implementation role. Respect actual runtime slot limits.
 
 ## UI design and learning from use
-For UI tasks, activate the PM–UX–developer group and
-`.agents/skills/interview-ui-design/SKILL.md`. UX owns Paper designs/redlines; PM owns
+When UI design warrants a Paper pass, load
+`.agents/skills/interview-ui-design/SKILL.md` and involve PM, UX and developer
+only for the contributions needed; they need not run simultaneously. UX owns Paper designs/redlines; PM owns
 the specification; developer contributes feasibility and implements; UX/QA review
 the running result. Verify Paper access in the actual UX worker before relying on it.
 Use the dedicated ai-interview project described in `docs/paper-design.md`.

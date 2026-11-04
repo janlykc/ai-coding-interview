@@ -20,8 +20,10 @@ application operations after verifying it belongs to the same Git repository.
 1. Inspect the task and relevant code. Confirm time available and any task-specific
    restrictions. Do not invent a task if none is supplied.
 2. Use `ai_team/program_manager/AGENTS.md` for spec authorship and combine
-   `ai_team/scribe/AGENTS.md` unless separate recording is useful. Ask a developer
-   using `ai_team/developer/AGENTS.md` for entry points, contracts and test commands.
+   the scribe responsibility unless separate recording is useful. Load the PM role
+   when delegating spec authorship, not as a startup step. Ask a developer using
+   `ai_team/developer/AGENTS.md` only when investigation or feasibility input is
+   needed; do not spawn one solely because design has begun.
 3. Collaborate with the human PE/product owner. Capture behavior, exclusions,
    acceptance examples, component contracts, edge cases and uncertain decisions in
    `spec.md`. Recommend defaults and surface consequential tradeoffs.
@@ -36,7 +38,8 @@ For 60–75 minutes, aim for roughly 5–10 minutes of design, adjusted to the t
 Avoid spawning the whole team or requiring exhaustive documentation. On later changes,
 revise only affected requirements/checkpoints and preserve decisions that explain why.
 
-For a task with UI, use interview-ui-design and the PM–UX–developer group. Paper is
+For meaningful UI design work, load interview-ui-design and involve PM, UX and
+developer only for needed contributions, not as a fixed simultaneous team. Paper is
 the default canvas, with access verified in the UX worker. PM owns requirements; UX
 owns design.md and redlines; dev supplies feasibility. Reference agreed designs in
 the spec and plan before implementing the relevant UI checkpoint.

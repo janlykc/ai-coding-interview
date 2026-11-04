@@ -2,6 +2,10 @@
 
 ## Design and agreement
 
+Begin with the lead only. Load phase skills and role instructions on demand, and
+delegate only concrete work. The roles below describe ownership, not a starting
+roster; design, implementation, testing and release do not each require a new team.
+
 The human owns product direction and principal engineering judgment. PM/scribe
 captures the spec while developers explain existing code and feasible options.
 A high-level problem may need several components; choose the smallest useful set

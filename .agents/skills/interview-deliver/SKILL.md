@@ -14,6 +14,10 @@ Explicitly pass these paths to workers; do not assume cross-repository discovery
 Read the harness root `AGENTS.md`, `ai_team/coordinator/AGENTS.md` and the active session's spec,
 plan and handoff. If agreement or critical requirements are missing, return to design.
 
+Load other skills and role files only when their work becomes necessary. A checkpoint
+does not require a new worker for every responsibility; reuse suitable workers while
+preserving independent review. Do not spawn idle PM, UX, QA or delivery agents.
+
 For each checkpoint:
 1. Dispatch a developer with acceptance IDs, relevant code, owned paths, dependencies,
    verification expected and stop condition. Read the matching role file; pass only

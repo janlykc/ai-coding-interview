@@ -16,24 +16,32 @@ selected repository root and pass the role path in its assignment.
 | [UX](ux/AGENTS.md) | UI is material | Paper design/redlines and visual/accessibility review |
 | [Delivery](delivery/AGENTS.md) | Commit, push or environment work | Git execution, local run, optional deployment |
 
-Start with coordinator, PM/scribe and one developer; add QA at a useful checkpoint.
+Start with the lead only. This is a library, not a startup roster: do not load every
+role into context. Bring in PM/scribe for spec authorship, a developer for concrete
+investigation or implementation, and QA/CR when a candidate needs evaluation.
 Create backend/frontend workers only when the boundaries support independent work.
 The coordinator should use the strongest reasoning setting available within the
 user's budget. Smaller implementation tasks may use faster workers where supported;
 these are preferences, not hard-coded model IDs or promises about host controls.
 
-## Phase schedule and context budget
+## On-demand activation and context budget
 
 Roles need not be simultaneous or separate processes. Check the host's actual slot
 limit; with four total slots, keep the coordinator plus at most three active workers.
 
-- Design: coordinator + PM/scribe + developer; add UX for a UI task.
-- Build: coordinator + the needed developers; PM/UX remain available for questions
-  but need not occupy running slots after the design handoff.
-- Verify: stop/release idle workers and bring in an independent QA/CR worker. The same
-  non-implementer may perform those two responsibilities in distinct passes.
-- Deliver: reuse an available implementation worker as delivery operator under the
-  coordinator's decision. This is execution, not independent approval.
+- Design: load interview-spec. Bring in PM/scribe to author the spec once the task
+  is understood. Ask a developer only when code investigation or feasibility needs it.
+  Load interview-ui-design and involve UX when meaningful UI design is needed.
+- Build: load interview-deliver and delegate the next implementation checkpoint.
+  Add more developers only for useful independent work.
+- Verify: load interview-review or interview-test-deploy when a candidate is ready.
+  An independent non-implementer may handle QA and CR in separate passes.
+- Deliver: consult submission guidance when a Git checkpoint or release is due.
+  Reuse an available developer for delivery execution; this is not independent approval.
+
+These are activation triggers, not teams to spawn at phase entry. Before delegation,
+identify the needed output and pass only the relevant role, skill sections and task
+context. Skill availability does not require loading every skill body.
 
 Use supported stop/follow-up mechanisms and preserve handoffs before retiring a worker.
 Do not keep completed agents occupying slots solely to match the organization chart.
@@ -55,5 +63,6 @@ If the runtime cannot spawn agents, say so. Ask the human to allow sequential ro
 passes, or have them open the required worker manually. Do not claim independence
 for a review performed by the implementation agent itself.
 
-For UI tasks, PM + Paper UX + developer is the default design group. See
+For substantial UI design, PM, Paper UX and developer collaborate as needed,
+without requiring three simultaneous workers. See
 [Paper setup](../docs/paper-design.md) and [workflow learnings](../docs/workflow-learnings.md).

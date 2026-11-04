@@ -4,7 +4,13 @@ Use two separate checkouts: the provided repository is the application; this rep
 is a support toolkit. The harness is not a runtime library, submodule or dependency
 of the application. No copying of role files into the supplied repo is required.
 
-## Start
+## Start with the README
+
+The [provided-repository section in README](../README.md#using-this-harness-with-a-provided-repository)
+is the entry point for both humans and agents. Read it, identify the two paths, and
+begin the design session. Installation and CLI use are optional.
+
+## Optional attachment helper
 
 Clone the supplied URL using its access instructions. Clone this harness alongside it
 if it is not already available. From the harness, after `make setup`:

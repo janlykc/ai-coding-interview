@@ -12,6 +12,9 @@ is no session, use `python3 scripts/harness.py new-session <slug>` and begin des
 For harness maintenance, work directly on the harness; no exercise session is needed.
 
 ## Attached repository mode
+For a supplied repository, begin with the provided-repository workflow in `README.md`;
+it works through normal file editing and does not require the attach CLI. Establish
+that session before using the standalone new-session command.
 When the session has `context.json` with `mode: attached`, `target_root` is the
 implementation checkout and `harness_root` provides supporting instructions only.
 Read the target's applicable instructions first; preserve its stack, conventions and

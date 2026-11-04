@@ -37,7 +37,8 @@ fails, explicitly ask the agent to read `.agents/skills/<name>/SKILL.md`.
 
 ## If given an existing repository
 
-Use the [attached-repository workflow](existing-repository.md). The `attach` command
+Start with the [README workflow](../README.md#using-this-harness-with-a-provided-repository);
+no command is required. The optional `attach` command
 creates a two-folder workspace and explicit bootstrap prompt without editing the target.
 Open a Codex chat on the implementation checkout, and paste the generated prompt so it
 can explicitly read the support harness. Cross-repository instructions/skills are not

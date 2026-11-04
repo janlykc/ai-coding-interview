@@ -4,6 +4,8 @@ A reusable, stack-neutral workspace for a 60–75 minute AI-assisted coding inte
 You act as principal engineer and product owner. A program manager authors the
 spec; developers implement; QA verifies; the lead coordinates and reviews.
 
+For an existing codebase, start with [the provided-repository workflow](#using-this-harness-with-a-provided-repository). It requires only this README and the role files.
+
 ## Project foundation
 
 Uses a `pyproject.toml`, `src/` package layout, Hatchling build backend and a local
@@ -44,18 +46,53 @@ VS Code: **Terminal → Run Task → Harness: doctor** or **Harness: new session
 The workspace recommends the Codex and Python extensions; JavaScript/TypeScript
 editing is built into VS Code. Authentication and model selection remain yours.
 
-## Given an existing repository?
+## Using this harness with a provided repository
 
-Clone it alongside this harness, then run from the harness:
+Keep the two repositories alongside each other. Open the provided repository in
+VS Code or Codex, and tell the agent where this README is. You do not need to
+install the harness, run an attachment command, or copy its files into the project.
 
-```sh
-.venv/bin/interview attach /absolute/path/to/provided-repo --session interview-01
-```
+Give the agent this instruction, replacing the paths:
 
-Open the printed workspace and paste the printed `start.md` into a chat working on
-the provided repo. Agents use the harness roles but implement and test in the target.
-Nothing is installed into or changed in the supplied repository by attachment.
-See [existing-repository mode](docs/existing-repository.md) for the complete workflow.
+> Read `/path/to/ai-coding-interview/README.md` and use its provided-repository
+> workflow. Our implementation repository is `/path/to/provided-repo`.
+> I am the principal engineer and product owner. Begin a design session with me;
+> use the harness's team roles to produce a concise spec and implementation plan
+> before coding. The task is: [paste the task].
+
+### Instructions for the agent
+
+1. **Establish the two roots.** The provided repo is the implementation target;
+   this harness supplies collaboration instructions. Confirm the target's Git root,
+   branch and existing changes. Read its applicable `AGENTS.md`, README and project
+   configuration before designing. Preserve its conventions and surface conflicts.
+2. **Load the team guidance explicitly.** Read this harness's `AGENTS.md`, then
+   `ai_team/coordinator/AGENTS.md`. Read only the other role files and skills needed
+   for the current phase. Resolve those paths from the harness, not the target.
+3. **Keep a small session record.** Create a new, non-overwriting folder under this
+   harness's `.harness/sessions/<session-name>/`. Use `docs/templates/` as needed.
+   Record the absolute target, harness and session paths in `context.json` using
+   `mode: attached`, `target_root`, `harness_root` and `session_root`. Set the harness's
+   `docs/ACTIVE_SESSION` to that folder's relative path. These files are local and
+   ignored by Git. No CLI is required; normal file editing is sufficient.
+4. **Design together, then coordinate.** The human owns product and principal
+   engineering decisions. PM/scribe authors the spec; developers explain the existing
+   code and implementation options. Once the human agrees the spec and first
+   checkpoint, coordinate implementation, QA and review using the plan.
+5. **Do application work in the target.** Give every worker the target working
+   directory, absolute harness role path, session path and bounded assignment.
+   Use the target's dependencies and native test/build commands. Review real diffs
+   and record validation against the target's code state. Application commits and
+   authorized pushes belong to the target; the harness remote is unrelated.
+6. **Preserve continuation.** Before switching between Codex and VS Code, stop
+   outstanding writers and update the session handoff with target Git state, current
+   checkpoint, results and next action. The next agent reads those files and verifies
+   the checkout before continuing. Export specs into the target only when requested.
+
+You may add the harness as a second VS Code folder for browsing, but work on application
+code in the provided repo. Its setup remains independent of this harness's Python tools.
+The existing `interview attach` helper is optional; it automates the session records
+and two-folder workspace described above. The README workflow works without it.
 
 ## Workflow and files
 

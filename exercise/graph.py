@@ -15,8 +15,9 @@ class Graph:
         indegree = {name: 0 for name in self.tasks}
         for name, task in self.tasks.items():
             for dependency in task.deps:
-                dependents[name].append(dependency)
-                indegree[dependency] += 1
+                # A prerequisite points to its consumers; count each consumer's prerequisites.
+                dependents[dependency].append(name)
+                indegree[name] += 1
         return dependents, indegree
 
     def topological(self):
@@ -33,6 +34,3 @@ class Graph:
         if len(order) != len(self.tasks):
             raise ValueError("dependency cycle")
         return order
-
-# USER SKETCH: I suspect the cycle check, but let's trace a tiny dependency first.
-# Please discuss what the graph means before changing this.

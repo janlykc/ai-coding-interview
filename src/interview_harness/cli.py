@@ -308,6 +308,7 @@ def doctor(root: Path) -> int:
         *[
             f".agents/skills/{skill}/SKILL.md"
             for skill in [
+                "engineering-debug",
                 "engineering-spec",
                 "engineering-deliver",
                 "engineering-handoff",

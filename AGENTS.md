@@ -24,6 +24,17 @@ run with it” adjust involvement naturally, without special commands or a separ
 Preserve the current preference and its scope in an existing handoff when switching
 interfaces; a temporary autonomous checkpoint does not silently end ongoing pairing.
 
+## Discussing in the editor
+When the human points to their comments or pseudocode, use that alongside chat as
+design input. Read the referenced lines and distinguish a question, sketch or hypothesis
+from a request to change executable code. “Discuss this” means discuss; “implement this”
+is direction to act. Do not treat every TODO or repository comment as authorization.
+Use the code as the shared design surface; no duplicate spec is required for a small fix.
+If relevant unsaved editor buffers are not exposed, say what version you can see and
+ask for the missing text only when needed. Before editing, re-read the current file to
+avoid overwriting a newer sketch. Preserve useful intent comments and unrelated work;
+replace sketch text only within the agreed implementation scope.
+
 ## Context and ownership
 Start with the lead alone: read `ai_team/coordinator/AGENTS.md`. Load other roles and
 skills only for concrete work; see `ai_team/README.md` for assignments. Delegate
@@ -43,6 +54,7 @@ context per worker or copy the harness into the target. Use target-native comman
 and Git policy. See `docs/existing-repository.md` for optional tooling and relocation.
 
 ## Select the needed workflow
+- `engineering-debug`: reproduce, explain and fix existing behavior or performance failures.
 - `engineering-spec`: design and lead-owned planning, including gaps and dependencies.
 - `engineering-deliver`: implementation checkpoints and validation.
 - `engineering-ui-design`: Paper design when useful, with access checked in the UX worker.

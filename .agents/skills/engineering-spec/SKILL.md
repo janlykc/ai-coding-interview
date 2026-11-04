@@ -5,6 +5,8 @@ description: Turn a development task into an agreed concise specification and ch
 
 Read root `AGENTS.md` for shared policy and session/path resolution. Use the
 README's matching setup only if session records are needed and none exist.
+For a focused change, referenced code comments/pseudocode may hold the design; follow
+the root editor-discussion guidance rather than requiring a separate spec document.
 
 1. Inspect the task and relevant code. Confirm time available and any task-specific
    restrictions. Do not invent a task if none is supplied.

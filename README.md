@@ -43,6 +43,15 @@ Say “take this checkpoint and run with it” for more autonomy, or “slow dow
 me through this” for more involvement. This is a preference within the same workflow;
 the behavior is defined once in [AGENTS.md](AGENTS.md#pair-with-me).
 
+For code-first discussion, add questions or pseudocode in the editor and say
+“work through these comments with me; don't implement yet.” When ready, say
+“implement the approach we agreed.” The agent uses the referenced code as design
+context and preserves your edits. Saved files are readable; unsaved buffers depend
+on what the current interface exposes.
+
+For failures, “help me debug this” selects `engineering-debug`: reproduce, reason,
+make a focused fix when requested, and verify. It works with the same pairing preference.
+
 ## Start here
 
 Give the agent the task and the paths in [the opening prompt](prompts/start.md).

@@ -15,14 +15,8 @@ For parallel sections, use [the worktree procedure](worktrees.md).
 
 ## 2. Review and check in
 
-Stop writers for an uncommitted review. Inspect tracked and untracked changes; record
-what the snapshot contains. Assign `ai_team/reviewer/AGENTS.md` to a fresh reviewer
-that did not implement the candidate. Review code paths and contracts, not just a
-summary of passed tests. Use `docs/templates/review.md` for a short session receipt.
-Give the reviewer raw evidence without the desired conclusion.
-
-Coordinator dispositions findings; developer fixes; reviewer rechecks the affected
-change. Inspect the staged diff and stage explicit paths. Commit coherent work with
+Use engineering-review for candidate capture, independent review and finding resolution.
+Inspect the staged diff and stage explicit paths. Commit coherent work with
 a message describing behavior. Record the resulting SHA and verify that its content
 matches the reviewed snapshot. If content changed during staging/commit, re-review the
 changed scope. A draft commit can freeze work for review but is not acceptance.
@@ -72,20 +66,8 @@ Delivery integrates accepted commits in dependency order. QA executes relevant c
 on the resulting candidate; reviewer checks cross-component behavior and any resolution
 changes. Re-read the actual integration head and destination base before submission.
 
-Use `engineering-test-deploy` to run the application. The default destination is a local
-test environment. Record install/build/start commands, actual source state, dependency
-state, port, process/run identity, readiness/smoke results and stop command. Give parallel
-worktrees distinct ports and test data; check existing runs before starting replacements.
-For an authorized remote preview, follow the target's existing pipeline and record
-request/build ID, artifact/source and actual serving URL/revision. Do not invent a
-cloud deployment procedure or import unrelated internal deployment tooling.
-
-QA tests acceptance examples against that running candidate, including critical failure
-paths and component seams. UX/QA review UI against the selected Paper redlines. A server
-starting is not proof that the user journey works. After fixes, refresh affected review
-and QA; do not reuse a green result from a previous build or dirty checkout for a new
-candidate. Keep source, CR, test results, running/deployed state and human acceptance
-separate. Use the validation record for evidence and the plan for checkpoint disposition.
+Use engineering-test-deploy for runtime setup, serving-source verification and QA.
+Keep detailed run evidence in validation.md and link it from the checkpoint.
 
 ## 5. Submit and demonstrate
 

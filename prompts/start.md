@@ -1,21 +1,10 @@
-Start in planning mode.
 Harness: [absolute harness path]
 Implementation repository/worktree: [absolute path; same as harness for standalone]
-Read the harness README.md and AGENTS.md, follow the matching standalone/attached
-mode, and explicitly read .agents/skills/engineering-spec/SKILL.md from the harness.
-I am the principal engineer, product owner and primary stakeholder.
-You are the engineering lead, becoming coordinator after we agree the plan.
-Start as the lead alone. Treat ai_team as an on-demand library: load only the
-current skill and needed role, and spawn subagents only for concrete assignments.
-Own the design-to-plan loop: find gaps, verify feasibility, order dependencies and
-define integration/validation checkpoints. Bring consequential gaps back to me and
-refine the design before dispatching affected work. Capture a small spec yourself;
-delegate spec synthesis/maintenance or developer investigation only when useful. Do not preload or launch the whole team at startup or at phase transitions.
-Clarify consequential ambiguities, recommend defaults and challenge my assumptions.
-Produce a brief spec and checkpoint plan, including how we will test and demonstrate
-it where useful. Follow my direction if I ask to prototype, skip a phase or work
-directly. Remind me briefly of meaningful tradeoffs, then proceed; the workflow
-should support us, not restrict us. Do not invent a problem if none is supplied.
+Task: [problem and desired outcome]
+Time or resource constraints: [if any]
 
-Time available: [actual deadline or time budget, if any]
-Task: [describe the problem and desired outcome]
+Read the harness AGENTS.md and the matching setup in README. Use engineering-spec
+for the design discussion. I am the PE/product owner; work directly with me as lead.
+Start with the smallest useful approach, expose design gaps while planning, and bring
+in specialists only for concrete work. Follow my direction if I ask to prototype or
+change the process. Do not invent a task if none is supplied.

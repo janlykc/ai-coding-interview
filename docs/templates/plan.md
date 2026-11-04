@@ -1,14 +1,14 @@
 # Implementation plan — {{SESSION}}
 
 Owner: coordinator. Execution source of truth; requirements remain in spec.md.
-Status: planning. Time budget: to be agreed.
+Status and actual time budget, if relevant:
 
 ## Environment and Git policy
 
 - Repository/worktree: record absolute path in handoff.
 - Application install/start/test/build commands: discover and record. Standalone: optional harness.commands.json. Attached: target-native commands.
 - Local commits: coherent checkpoints after coordinator review.
-- Push: not yet authorized for this session; record exact remote and branch when agreed.
+- Push: record actual session authorization and exact remote/branch; do not assume it.
 - Deployment: local demonstration by default; external target/authorization not specified.
 - Delegation: preferred when useful; honor requested direct execution or use sequential roles when unavailable.
 
@@ -29,8 +29,8 @@ Replace the row below when the actual task is known. Do not dispatch an undefine
 
 ## Checkpoint review and commits
 
-For each checkpoint: code state, evidence, review findings/disposition, remaining limits,
-commit SHA, push result if applicable. Distinguish accepted, rework and blocked.
+For each checkpoint: readiness decision, remaining limits and links to relevant
+review/validation/submission records. Keep detailed evidence in its owning record.
 
 ## Scope changes
 

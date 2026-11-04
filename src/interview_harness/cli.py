@@ -11,7 +11,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-TEMPLATES = ("spec", "plan", "handoff", "decisions", "validation", "retrospective")
+STARTER_TEMPLATES = ("spec", "plan", "handoff")
 
 
 def root_from(start: Path) -> Path:
@@ -58,7 +58,7 @@ def new_session(root: Path, name: str, *, attached: bool = False) -> Path:
         .read_text()
         .replace("{{SESSION}}", name)
         .replace("{{ROOT}}", str(root))
-        for item in TEMPLATES
+        for item in STARTER_TEMPLATES
     }
     destination.mkdir(parents=True, exist_ok=False)
     for item, content in contents.items():
@@ -292,14 +292,13 @@ def doctor(root: Path) -> int:
         "pyproject.toml",
         "harness.commands.json",
         "interview.code-workspace",
-        *[f"docs/templates/{item}.md" for item in TEMPLATES],
+        *[f"docs/templates/{item}.md" for item in STARTER_TEMPLATES],
         *[
             f"ai_team/{role}/AGENTS.md"
             for role in [
                 "coordinator",
                 "reviewer",
                 "spec_author",
-                "scribe",
                 "developer",
                 "qa",
                 "ux",

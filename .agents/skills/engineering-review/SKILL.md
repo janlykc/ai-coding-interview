@@ -3,7 +3,7 @@ name: engineering-review
 description: Perform independent subagent code review or Codex review of an implementation checkpoint, bind findings to the actual candidate, and recheck fixes before submission.
 ---
 
-Read `ai_team/reviewer/AGENTS.md` and `docs/submission.md` from the harness, plus the
+Read root `AGENTS.md` and `ai_team/reviewer/AGENTS.md` from the harness, plus the
 active session and target instructions. In attached mode use the implementation
 checkout/worktree from the assignment, not the harness Git root.
 
@@ -19,7 +19,7 @@ checkout/worktree from the assignment, not the harness Git root.
    Coordinator routes fixes to developers, records disposition and obtains affected
    re-review. Do not erase earlier findings because a later summary says "clean".
 4. If Codex review is available, use the selected local app/CLI review or configured
-   PR review path described in submission.md. Record which path actually ran. A local
+   PR review path in the Codex review options section of docs/submission.md. Record which path actually ran. A local
    Codex reviewer may itself be the independent review; do not double-count one run.
 5. Re-read candidate and integration base before accepting. A changed head/base,
    conflict resolution or dependency invalidates affected evidence. Review new changes

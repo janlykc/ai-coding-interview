@@ -1,8 +1,8 @@
 # Parallel implementation with Git worktrees
 
 Use worktrees when components have independent boundaries and enough work to justify
-parallel agents. A small task may be faster in one checkout. Decompose first: PM/spec
-and developer reconnaissance establish interfaces; coordinator names owners and checkpoints.
+parallel agents. A small task may be faster in one checkout. The lead uses the spec and code
+reconnaissance to establish interfaces, owners and checkpoints.
 Worktrees isolate files, not ports, databases, credentials, remote services or dependencies.
 
 ## Plan the split
@@ -40,7 +40,7 @@ common directory (`git rev-parse --path-format=absolute --git-common-dir`). Keep
 context.json stable while workers run; record the current integration path in handoff.md.
 
 Each worker reads target instructions from its own checkout, then explicitly loads its
-harness role and the shared session. Keep PM/spec and coordinator/plan writes with their
+harness role and the shared session. Keep spec and plan writes with their
 owners in the session location; do not create competing specs in every worktree. Each
 checkout uses its own environment/build outputs; do not symlink a mutable venv or
 node_modules across branches with different dependency states.
@@ -65,7 +65,7 @@ git rev-parse 'HEAD^{tree}'
 ```
 
 If a merge conflicts, stop the sequence and assign resolution to the relevant developer.
-The coordinator does not implement the fix. Inspect/review the resolved diff, rerun
+Honor a requested direct-execution mode. Inspect/review the resolved diff, rerun
 affected checks and preserve the prior result until resolution is validated. A clean
 merge can still contain semantic conflicts: run combined contract/integration checks,
 review the complete submission diff, then test/deploy and QA the integration candidate.

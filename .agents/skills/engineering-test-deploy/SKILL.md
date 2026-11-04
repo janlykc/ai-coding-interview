@@ -3,8 +3,8 @@ name: engineering-test-deploy
 description: Run an application candidate in a local test environment or an explicitly selected preview target, verify the serving revision, and coordinate QA before demonstration or submission.
 ---
 
-Read `ai_team/delivery/AGENTS.md`, `ai_team/qa/AGENTS.md` and the test/QA section of
-`docs/submission.md`. Resolve the actual implementation worktree from the session or
+Read root `AGENTS.md` for shared policy. Load the delivery or QA role for its assigned
+work, not both by default. Resolve the actual implementation worktree from the session or
 assignment. Do not deploy the harness instead of an attached application.
 
 1. Establish the finish line: local run/smoke is the default; remote preview only when

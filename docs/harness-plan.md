@@ -1,5 +1,9 @@
 # Harness implementation plan
 
+Historical construction/verification record, not current operating instructions.
+Current behavior is defined by root AGENTS.md and the relevant role/skill.
+Results below describe the versions checked at the time.
+
 This tracks harness construction. It is separate from any future interview task plan.
 
 | Checkpoint | Scope | Acceptance | Status |

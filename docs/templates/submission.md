@@ -4,13 +4,13 @@
 - Implementation repository, branch and exact candidate:
 - Destination base and integration result:
 - Behavior change / acceptance IDs:
-- Independent CR result and finding dispositions:
-- Codex local/provider review status if used:
-- Tests actually run and limitations:
-- Local run or preview URL, serving source/build and smoke result:
-- QA / Paper UX observations and human acceptance:
+- Review/validation evidence: link the relevant candidate-bound records; summarize limits.
+- Human acceptance or remaining decision:
 - How to run and demonstrate:
 - Push / PR / merge result, if in scope:
 - Known incomplete work and next action:
 
 Populate only relevant fields. This is evidence, not authorization to publish.
+
+For an external PR, include the useful validation summary inline; local evidence links
+may not be accessible to its readers. Do not publish private session records.

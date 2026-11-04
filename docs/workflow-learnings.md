@@ -1,50 +1,29 @@
-# Working agreements learned from use
+# Why these defaults exist
 
-These are scoped to this engineering harness. Source: the user's development retrospective
-and corrections in this conversation, including the explicit Paper workflow on 2026-11-03.
-They are qualitative working preferences, not measured claims of superiority.
+Qualitative lessons from the user's Esse retrospective and corrections on 2026-11-03.
+These explain the current instructions; they are not a second policy manual or measured
+claims that the workflow is faster.
 
-| Observed preference or correction | Harness behavior |
+| Learning | Where it belongs |
 | --- | --- |
-| Human supplies requirements and questions, then reviews redlines | PM/scribe authors the spec; human keeps product and PE decisions |
-| PM, Paper UX and developers iterate together | UI design uses Paper, with feasibility input before implementation and UX review after |
-| Roles are a library, not a startup team (2026-11-03) | Start with the lead only; load the current skill and delegate concrete work on demand; phase changes do not spawn a roster |
-| Same lead retains useful context | Design lead becomes checkpoint coordinator |
-| Autonomous experiments are useful; decision-critical findings need visibility | Bounded execution with concise decision/evidence updates |
-| Fast delivery still needs confidence in lower layers | Inspect component seams and meaningful evidence; QA complements human acceptance |
-| README should explain how to use another repository | Existing-repo mode is readable and usable without a custom command |
-| Skills should improve from actual usage | Promote a demonstrated lesson into the relevant role/skill during the session |
+| Direct human/lead discussion; optional spec author, not program management | Coordinator and spec-author roles |
+| Planning exposes design gaps as well as ordering work | engineering-spec |
+| Specialists are on demand; process should remind, not restrict | Root AGENTS.md |
+| Paper design needs feasibility input and running-result review | engineering-ui-design |
+| Exact candidate and component seams matter more than test counts | Reviewer/QA roles and review/test-deploy skills |
+| Another repository must work without installing a custom CLI | README provided-repository setup |
+| Repeated rules drift and waste context | Shared policy in root, judgment in roles, procedures in skills |
+| Empty records create ceremony | New sessions create spec/plan/handoff; other templates are on demand |
 
-## How agents maintain these agreements
+The DRY pass merged the separate scribe into spec_author and retained historical
+construction records as provenance only. Update the owning instruction at a natural
+checkpoint when evidence or human direction changes it; replace superseded wording.
+Use targeted available context, not broad private-chat collection or background monitoring.
+Judge future changes by useful output, rework and coordination cost.
 
-When the human corrects a workflow or a repeated outcome demonstrates a useful change,
-apply the correction to current behavior immediately. Record the lesson briefly;
-update the narrowest harness role/skill at a natural checkpoint or after the task unless a blocking fix is needed. Do not derail implementation to maintain
-the harness or merely promise to remember. Report the update and validate affected
-links/skill metadata or tooling.
-Preserve user edits, existing authorization and task scope.
+## Esse source provenance
 
-Use relevant conversations and session retrospectives already available to the task.
-If further history is needed, inspect targeted chats rather than sweeping all local
-conversations or copying private transcripts into this portable repository. Separate
-explicit preferences from hypotheses; try uncertain improvements in a bounded trial first.
-Remove superseded advice instead of accumulating contradictory rules. Do not turn a
-one-off task constraint into a universal rule, add new bureaucracy, or change global
-machine settings as a side effect. This is an in-session practice, not a background
-monitor or a claim that every conversation is automatically observed.
-
-Submission/worktree refinement (2026-11-03): preserve the useful release habits—one
-owner per mutation, independent review of the current candidate, dependency-order
-integration, and QA of the actual running code—using native Git and lightweight
-session records. Do not transplant company-specific admission or cloud infrastructure.
-
-## Domain-neutral engineering review — 2026-11-03
-
-User correction: the operating team solves a real problem, with domain and deadline
-supplied by that task. Interview preparation belongs in human-facing notes. Roles
-remain an on-demand library; skill names now use engineering-*.
-
-Sources inspected in the local Esse workspace (inspiration, not runtime dependencies):
+Inspected local sources are inspiration, not runtime dependencies:
 
 | Source | Portable lesson applied |
 | --- | --- |
@@ -55,30 +34,6 @@ Sources inspected in the local Esse workspace (inspiration, not runtime dependen
 | ai_team/reviewer/backend/AGENTS.md | Independent, findings-first review of concrete behavior; no invented stylistic blockers |
 | esse-deployment/agents/ci-release-shared/AGENTS.md, agents/test-deployment-operator/AGENTS.md and installed esse-release/SKILL.md | One executor, candidate-bound evidence, bounded recovery, verify destination rather than submission alone |
 
-The resulting instructions are self-contained. They assume no household domain,
-company repository layout, cloud provider, credential set or special release authority.
 
-## Lead-owned planning and specialist kitchen — 2026-11-03
-
-The human sets direction, asks design questions and resolves consequential tradeoffs.
-The engineering lead owns converting design into an executable plan: identify missing
-behavior/contracts, check feasibility, order dependencies, define integration and
-validation, and bring unresolved design decisions back to the human. Planning can
-expose gaps and reopen design; it is not merely scheduling an already-complete spec.
-
-Use specialists like sous chefs with bounded assignments. Spec authorship is optional
-delegation, not a management layer: the lead may capture a small spec directly.
-The former program_manager role is now spec_author; it records agreed intent while
-the lead retains technical decomposition and phase recommendations. Keep one spec
-writer, on-demand context, independent evaluation and autonomous agreed execution.
-
-Evaluate this working model through real tasks and bounded trials. Keep what reduces
-rework and improves clarity; revise what adds coordination without useful output.
-
-## Advisory workflow — 2026-11-03
-
-User correction: the process may remind, but must not become something the human
-has to fight. Roles, phase order and documentation are adaptable defaults. Follow
-requests to prototype, skip/combine phases, defer paperwork/review or work directly;
-give a concise reminder for a meaningful tradeoff without repeated approval gates.
-Stay honest about missing evidence and respect actual permissions and unrelated work.
+The portable team assumes no household domain, company layout, cloud provider,
+credentials or special release authority.

@@ -3,7 +3,7 @@
 Review a candidate you did not implement. Default to read-only; do not fix code,
 commit, merge or publish a review unless separately assigned that action. The
 coordinator owns disposition and delivery; your job is an independent assessment.
-Use `.agents/skills/engineering-review/SKILL.md` from the harness.
+The caller uses engineering-review to establish the candidate and route findings.
 
 Read the target's applicable instructions and the complete assigned diff. Trace the
 changed execution path into callers and component boundaries. Check behavior and

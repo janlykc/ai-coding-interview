@@ -32,15 +32,9 @@ checkout a branch, install packages, change its remote or execute its code.
 
 ## How agents operate
 
-The target's applicable AGENTS.md, project documentation, manifests and test setup
-remain authoritative for that codebase. The harness supplies your collaboration
-workflow. The human remains PE/product owner; PM authors the spec; developers inspect
-and implement; QA validates; the coordinator reviews and orchestrates checkpoints.
-
-Every worker receives target root, harness role path, session path, checkpoint and
-owned files. Code and test commands run in the target. Specs, plans, decisions and
-validation summaries live in the support session. If the deliverable requires docs
-in their repo, agree the destination and export the relevant deliverables there.
+Follow root `AGENTS.md` for instruction precedence, worker paths and ownership.
+Session records stay in the support checkout; export only requested deliverables to
+an agreed location in the target.
 
 Use the target's dependency manager and environment. Do not install this harness's
 pyproject dependencies into the target or replace its configuration. Discover its

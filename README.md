@@ -47,7 +47,8 @@ automatically load more roles, skills, worktrees or templates.
 Keep this repo's main branch as the reusable baseline. Create an task worktree
 using the reuse instructions below, then open its `interview.code-workspace` in VS
 Code and that same checkout in Codex. The agent may create session files directly;
-the commands below are optional helpers.
+the commands below are optional helpers. New sessions start with spec, plan and
+handoff only; copy other templates when they become useful.
 
 ```sh
 python3 scripts/harness.py doctor
@@ -112,62 +113,22 @@ code in the provided repo. Its setup remains independent of this harness's Pytho
 The existing `interview attach` helper is optional; it automates the session records
 and two-folder workspace described above. The README workflow works without it.
 
-## UI work: spec author + Paper UX + developer
+## Read only what the task needs
 
-When UI design is needed, involve the established roles on demand: the assigned spec writer (lead or delegated author) maintains the spec, UX designs in
-Paper, and developers contribute codebase knowledge and feasibility. Agree the
-important redlines with the human, implement, then have UX/QA review the running UI.
+| Need | Reference |
+| --- | --- |
+| Agent behavior and skill selection | [AGENTS.md](AGENTS.md) |
+| Assign specialist work | [Role library](ai_team/README.md) |
+| Select validation depth | [Verification choices](docs/workflow.md) |
+| Use Paper | [Design workspace](docs/paper-design.md) |
+| Continue in VS Code or Codex | [IDE setup](docs/ide-setup.md) |
+| Parallel component work | [Worktrees](docs/worktrees.md) |
+| Git review, integration and publication | [Submission](docs/submission.md) |
 
-[Paper workspace guidance](docs/paper-design.md) explains selecting a session-specific
-project and verifying access. The `engineering-ui-design` skill handles this loop. Verify MCP
-access in the actual UX worker; role files do not create a connection automatically.
-
-Agents should apply workflow lessons from your corrections and actual usage to the
-relevant roles/skills during the work. [Recorded learnings](docs/workflow-learnings.md)
-keep those changes explicit and scoped, without adding a background monitoring system.
-
-## Workflow and files
-
-| Stage | Owner | Durable output |
-| --- | --- | --- |
-| Frame and design | You + lead; optional spec author/developer input | `spec.md` with acceptance examples |
-| Plan and resolve gaps | Engineering lead; human resolves consequential choices | `plan.md` with dependencies, integration and validation |
-| Implement | Developer | Code and focused tests |
-| Verify | QA; UX for visual work | `validation.md` tied to code state |
-| Review and checkpoint | Coordinator; delivery executes Git | Review disposition and commit |
-| Continue elsewhere | Current coordinator | `handoff.md` and stopped workers |
-
-[Roles](ai_team/README.md) explain delegation. [Workflow](docs/workflow.md) describes
-testing, review, deployment and pacing. [IDE setup](docs/ide-setup.md) covers
-continuation and working with existing repositories.
-
-`docs/ACTIVE_SESSION` is a local pointer to the current session. Standalone sessions
-live in `docs/sessions/`; attached sessions live in ignored `.harness/sessions/`. Each session
-contains a spec, implementation plan, decisions, validation, handoff and retrospective.
-These are small working records, not a requirement to fill every field before coding.
-Keep task-specific code in paths that suit the problem; do not put application code
-inside `ai_team/` or the harness's own tests.
-
-## Worktrees, code review and submission
-
-Use native Git and the agents for the development loop:
-
-1. Agree component boundaries and checkpoints; use separate worktrees only where
-   parallel work helps. Record branch/path, owner, shared contracts and integration order.
-2. Developers implement/test; a fresh **CR subagent** reviews the actual diff and callers.
-   Fix findings and recheck the reviewed candidate. Use Codex local or configured PR
-   review as appropriate, keeping each review's scope and status explicit.
-3. Delivery checks in coherent snapshots and integrates accepted branches. Test and
-   review the combined result, not just each worker branch in isolation.
-4. Run the candidate locally (or an agreed preview), smoke it, and have QA/UX validate
-   acceptance against the actual running code and Paper redlines.
-5. Demonstrate Git history, the important diff, review results and working behavior.
-   Push/open a PR/merge only to the destination agreed for that task.
-
-[Worktree examples](docs/worktrees.md) and [submission/review/test-deployment guide](docs/submission.md)
-contain the human-and-agent procedure. Skills: `engineering-review` and
-`engineering-test-deploy`; reviewer role: `ai_team/reviewer/AGENTS.md`.
-No additional command wrapper or company deployment service is required.
+Templates under docs/templates are optional starting points, not forms to complete.
+The active session pointer is local; attached records live in ignored .harness/sessions,
+and standalone records in docs/sessions. Keep application code outside ai_team and
+the harness's own tests.
 
 ## Reuse without accumulating task solutions
 

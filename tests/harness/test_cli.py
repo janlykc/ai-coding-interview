@@ -9,7 +9,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
 from interview_harness.cli import (  # noqa: E402
-    TEMPLATES,
+    STARTER_TEMPLATES,
     active_session,
     attach_repository,
     attached_context,
@@ -30,7 +30,7 @@ class HarnessTests(unittest.TestCase):
         self.configure([])
         templates = self.root / "docs/templates"
         templates.mkdir(parents=True)
-        for name in TEMPLATES:
+        for name in STARTER_TEMPLATES:
             (templates / f"{name}.md").write_text("{{SESSION}} {{ROOT}}")
         subprocess.run(["git", "init", "-q", str(self.root)], check=True)
 
@@ -150,9 +150,11 @@ class HarnessTests(unittest.TestCase):
         self.assertEqual(len(paths), 1)
         return json.loads(paths[0].read_text())
 
-    def test_new_session_is_complete_and_never_overwrites(self):
+    def test_new_session_is_lean_and_never_overwrites(self):
+        for name in ("decisions", "validation", "retrospective"):
+            (self.root / "docs/templates" / f"{name}.md").write_text("optional record")
         path = new_session(self.root, "practice-01")
-        self.assertEqual(len(list(path.glob("*.md"))), len(TEMPLATES))
+        self.assertEqual({p.name for p in path.iterdir()}, {"spec.md", "plan.md", "handoff.md"})
         self.assertIn(str(self.root), (path / "handoff.md").read_text())
         (path / "spec.md").write_text("human decision")
         with self.assertRaises(FileExistsError):

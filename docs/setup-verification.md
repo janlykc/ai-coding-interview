@@ -1,5 +1,9 @@
 # Setup verification
 
+Historical construction/verification record, not current operating instructions.
+Current behavior is defined by root AGENTS.md and the relevant role/skill.
+Results below describe the versions checked at the time.
+
 Date: 2026-11-03. Environment: macOS, Python 3.12.6.
 
 Completed:

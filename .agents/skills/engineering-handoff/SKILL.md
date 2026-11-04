@@ -3,18 +3,9 @@ name: engineering-handoff
 description: Save or resume a development session across Codex desktop, VS Code or a fresh chat using repository context and a single active writer.
 ---
 
-In attached mode, read the session's `context.json` first. Resolve role/skill paths
-from `harness_root`, specs/plans/evidence summaries from `session_root`, and code,
-commands and Git operations from the explicitly assigned implementation worktree
-(defaulting to `target_root`). Verify that worktree belongs to the target Git repository.
-Preserve the target's instructions.
-Explicitly pass these paths to workers; do not assume cross-repository discovery.
-
-
-Read the harness root `AGENTS.md`. Prefer the explicitly supplied session path;
-otherwise read the harness's `docs/ACTIVE_SESSION`, not a path inside an attached
-application. Use the active integration worktree in the handoff, verifying it shares
-the target repository's Git common directory. On save, stop or finish outstanding
+Read root `AGENTS.md` for shared policy and session/path resolution. Use the active
+integration worktree in the handoff after verifying its target repository identity.
+On save, stop or finish outstanding
 worker writes before transferring ownership. Update the active session's `handoff.md`
 with repository/worktree path, branch, HEAD, dirty files, current interface/owner,
 checkpoint, next concrete action, validation status and live process/port details.

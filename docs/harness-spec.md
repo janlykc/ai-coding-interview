@@ -1,5 +1,9 @@
 # Harness specification
 
+Historical construction/verification record, not current operating instructions.
+Current behavior is defined by root AGENTS.md and the relevant role/skill.
+Results below describe the versions checked at the time.
+
 Status: implemented initial baseline, 2026-11-03.
 Source: the user's requested workflow and supplied interview preparation guide.
 This document specifies the reusable harness; exercise specs live under docs/sessions/.

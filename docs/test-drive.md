@@ -11,7 +11,7 @@ this harness. Keep Codex and VS Code on the same implementation checkout. Fill i
 prompts/start.md with the actual paths and question. Allow 60–75 minutes, matching
 the interview guide. Check sign-in and relevant tools before starting the clock.
 
-You supply the outcome, priorities, questions and architecture judgment. PM/scribe
+You supply the outcome, priorities, questions and architecture judgment. Spec writer
 joins when the spec needs authoring. Request developer feasibility input or a Paper
 UX pass only when the task needs it. Keep the same lead when you agree the first implementation checkpoint.
 
@@ -37,7 +37,7 @@ If tools fail, observe how well the fallback works instead of restarting the exe
 
 ## Record a few observations
 
-PM/scribe or the coordinator can keep a few timestamped lines; no telemetry system needed.
+Spec writer or the coordinator can keep a few timestamped lines; no telemetry system needed.
 
 | Observation | Record |
 | --- | --- |

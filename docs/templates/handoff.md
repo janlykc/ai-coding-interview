@@ -8,12 +8,12 @@
 - Dirty files: inspect Git; never assume clean.
 - Current checkpoint: none agreed.
 - Next action: read the task with the human and draft spec.md and plan.md.
-- Human decisions needed: task, consequential constraints, spec/first checkpoint agreement.
+- Human decisions needed: only consequential unresolved choices; use current direction.
 - Validation: application not configured or tested.
 - Live processes / ports / stop commands: none started by the harness.
 
 Read spec.md and the current checkpoint in plan.md. Consult decisions.md and
-validation.md as needed. Do not rely on prior conversation being available.
+validation.md if present and relevant. Do not rely on prior conversation being available.
 
 If parallel work or submission is active: list worker worktrees/branches/SHAs,
 outstanding writers, integration owner/head, CR findings and current review/check/run

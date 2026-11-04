@@ -1,5 +1,9 @@
 # First holistic assessment
 
+Historical construction/verification record, not current operating instructions.
+Current behavior is defined by root AGENTS.md and the relevant role/skill.
+Results below describe the versions checked at the time.
+
 Date: November 3, 2026. Reviewed baseline: 9721f4c and the corrections in this pass.
 
 ## Judgment

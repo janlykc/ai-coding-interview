@@ -3,10 +3,8 @@ name: engineering-ui-design
 description: Design application UI in Paper MCP with spec writer and developer collaboration, agree redlines, and review the implemented interface against them.
 ---
 
-Read the active session, `ai_team/ux/AGENTS.md`, and `docs/paper-design.md` from the
-harness. In attached mode resolve harness guidance from `harness_root`, application
-code from the assigned implementation worktree (default `target_root`), and planning
-records from `session_root` in context.json. Verify worktree repository identity.
+Read root `AGENTS.md`, the active session and `ai_team/ux/AGENTS.md`.
+Use docs/paper-design.md when creating a design record.
 
 ## Connect and establish ownership
 

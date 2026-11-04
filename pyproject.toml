@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling>=1.21,<2", "editables>=0.5,<1"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ai-coding-interview"
+version = "0.1.0"
+description = "Portable specification-driven AI coding interview harness"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "ruff>=0.9,<1", "build>=1,<2", "hatchling>=1.21,<2", "editables>=0.5,<1"]
+
+[project.scripts]
+interview = "interview_harness.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/interview_harness"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra --strict-markers"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]

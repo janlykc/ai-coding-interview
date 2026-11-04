@@ -1,0 +1,16 @@
+# Handoff — {{SESSION}}
+
+- Phase: design; task not supplied.
+- Repository/worktree: {{ROOT}}
+- Branch / HEAD: inspect before starting.
+- Active controller/interface: unassigned; confirm previous controller is idle.
+- Outstanding workers and owned files: none.
+- Dirty files: inspect Git; never assume clean.
+- Current checkpoint: none agreed.
+- Next action: read the task with the human and draft spec.md and plan.md.
+- Human decisions needed: task, consequential constraints, spec/first checkpoint agreement.
+- Validation: application not configured or tested.
+- Live processes / ports / stop commands: none started by the harness.
+
+Read spec.md and the current checkpoint in plan.md. Consult decisions.md and
+validation.md as needed. Do not rely on prior conversation being available.

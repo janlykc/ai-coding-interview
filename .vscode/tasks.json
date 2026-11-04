@@ -1,0 +1,122 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Harness: setup",
+      "type": "process",
+      "command": "make",
+      "args": [
+        "setup"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Harness: quality checks",
+      "type": "process",
+      "command": "make",
+      "args": [
+        "check"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Harness: doctor",
+      "type": "process",
+      "command": "python3",
+      "args": [
+        "scripts/harness.py",
+        "doctor"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Harness: new session",
+      "type": "process",
+      "command": "python3",
+      "args": [
+        "scripts/harness.py",
+        "new-session",
+        "${input:sessionName}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Harness: status",
+      "type": "process",
+      "command": "python3",
+      "args": [
+        "scripts/harness.py",
+        "status"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Harness: self-test",
+      "type": "process",
+      "command": "python3",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/harness",
+        "-v"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Harness: application test",
+      "type": "process",
+      "command": "python3",
+      "args": [
+        "scripts/harness.py",
+        "run",
+        "test"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Harness: application build",
+      "type": "process",
+      "command": "python3",
+      "args": [
+        "scripts/harness.py",
+        "run",
+        "build"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "sessionName",
+      "type": "promptString",
+      "description": "New session slug (letters, digits, hyphens)",
+      "default": "practice-01"
+    }
+  ]
+}

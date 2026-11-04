@@ -1,7 +1,7 @@
 # Specification — {{SESSION}}
 
 Status: draft; requirements not yet agreed.
-Owner: program manager. Human: principal engineer / product owner.
+Spec writer: lead or delegated spec author (record one). Human: principal engineer / product owner.
 
 ## Problem and constraints
 

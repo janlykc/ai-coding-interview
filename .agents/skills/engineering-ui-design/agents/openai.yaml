@@ -1,7 +1,7 @@
 interface:
   display_name: "Engineering UI design"
-  short_description: "Paper design with PM and developer collaboration"
-  default_prompt: "Use $engineering-ui-design to design the application UI with PM and developer input."
+  short_description: "Paper design with specification and developer input"
+  default_prompt: "Use $engineering-ui-design to design the application UI with spec writer and developer input."
 dependencies:
   tools:
     - type: "mcp"

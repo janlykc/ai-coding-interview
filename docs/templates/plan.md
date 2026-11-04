@@ -12,6 +12,13 @@ Status: planning. Time budget: to be agreed.
 - Deployment: local demonstration by default; external target/authorization not specified.
 - Delegation: verify runtime support; coordinator does not execute application work.
 
+## Design gaps and readiness
+
+Record only unresolved gaps that affect this plan: missing behavior/contract, required
+decision or investigation, owner, affected checkpoint and resolution. Revisit the spec
+with agreed answers. Do not dispatch work that depends on an unresolved critical gap;
+unaffected authorized checkpoints may proceed.
+
 ## Checkpoints
 
 Replace the row below when the actual task is known. Do not dispatch an undefined task.

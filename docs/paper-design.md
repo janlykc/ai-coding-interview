@@ -1,6 +1,6 @@
 # Paper design workspace
 
-For UI work, Paper is the default design environment. PM, UX and developer work
+For UI work, Paper is the default design environment. The spec writer, UX and developer work
 through a short design loop before implementation; UX remains involved in review.
 
 ## Select and verify the workspace
@@ -24,11 +24,11 @@ The UX owner creates `design.md` in the active session only when UI work is rele
 - Human decision, design revision/checkpoint and unresolved questions.
 - Exact exports/style references for implementation and observed review discrepancies.
 
-PM owns requirements in spec.md; UX owns design.md and the canvas; coordinator owns
+The assigned spec writer records agreed requirements in spec.md; UX owns design.md and the canvas; coordinator owns
 plan.md; developer owns code. Keep the records linked rather than copying the same
 spec into each file. A Paper page title never constitutes human acceptance.
 
-Before code handoff, PM checks behavior and developer checks feasibility. After code
+Before code handoff, spec writer checks behavior and developer checks feasibility. After code
 handoff, UX/QA review the running interface. Use screenshots for visual review and
 Paper inspection/export tools for implementation values. The live Paper guide controls
 tool-specific details, so the harness does not carry a copied manual that can go stale.

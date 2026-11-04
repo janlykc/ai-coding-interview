@@ -16,7 +16,7 @@ plan and handoff. If agreement or critical requirements are missing, return to d
 
 Load other skills and role files only when their work becomes necessary. A checkpoint
 does not require a new worker for every responsibility; reuse suitable workers while
-preserving independent review. Do not spawn idle PM, UX, QA or delivery agents.
+preserving independent review. Do not spawn idle spec author, UX, QA or delivery agents.
 
 For each checkpoint:
 1. Dispatch a developer with acceptance IDs, relevant code, owned paths, dependencies,
@@ -45,7 +45,7 @@ Conclude with a runnable demonstration, evidence, key code path and honest limit
 
 For UI checkpoints, use the Paper references in session design.md. Arrange UX and
 QA review of the rendered implementation against the agreed revision. Feed behavior
-changes back to PM and concrete implementation discrepancies back to developers.
+changes back to the lead and assigned spec writer and concrete implementation discrepancies back to developers.
 Apply corrections to current behavior immediately; record lessons briefly and update
 the harness at a natural checkpoint or after the task, following
 docs/workflow-learnings.md.

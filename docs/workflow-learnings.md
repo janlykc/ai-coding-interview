@@ -57,3 +57,20 @@ Sources inspected in the local Esse workspace (inspiration, not runtime dependen
 
 The resulting instructions are self-contained. They assume no household domain,
 company repository layout, cloud provider, credential set or special release authority.
+
+## Lead-owned planning and specialist kitchen — 2026-11-03
+
+The human sets direction, asks design questions and resolves consequential tradeoffs.
+The engineering lead owns converting design into an executable plan: identify missing
+behavior/contracts, check feasibility, order dependencies, define integration and
+validation, and bring unresolved design decisions back to the human. Planning can
+expose gaps and reopen design; it is not merely scheduling an already-complete spec.
+
+Use specialists like sous chefs with bounded assignments. Spec authorship is optional
+delegation, not a management layer: the lead may capture a small spec directly.
+The former program_manager role is now spec_author; it records agreed intent while
+the lead retains technical decomposition and phase recommendations. Keep one spec
+writer, on-demand context, independent evaluation and autonomous agreed execution.
+
+Evaluate this working model through real tasks and bounded trials. Keep what reduces
+rework and improves clarity; revise what adds coordination without useful output.

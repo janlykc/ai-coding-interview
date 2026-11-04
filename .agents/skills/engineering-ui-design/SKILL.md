@@ -1,6 +1,6 @@
 ---
 name: engineering-ui-design
-description: Design application UI in Paper MCP with PM and developer collaboration, agree redlines, and review the implemented interface against them.
+description: Design application UI in Paper MCP with spec writer and developer collaboration, agree redlines, and review the implemented interface against them.
 ---
 
 Read the active session, `ai_team/ux/AGENTS.md`, and `docs/paper-design.md` from the
@@ -24,21 +24,22 @@ info and selection, and record file/page references in session `design.md`.
 If tools only support the current canvas, have the user open/create the intended
 design file and verify it before editing. Keep one UX writer per artboard.
 
-## PM–UX–developer design loop
+## Specification–UX–developer design loop
 
-These are contributions, not a required simultaneous roster. Use the existing spec
-as PM input; request PM or developer involvement only for unresolved requirements,
+These are contributions, not a required simultaneous roster. The spec writer may
+be the lead or a delegated author; do not spawn a spec writer just for this loop. Use the existing spec
+as spec writer input; request spec writer or developer involvement only for unresolved requirements,
 feasibility or implementation work. Do not spawn extra workers merely to run this skill.
 
-1. PM supplies acceptance IDs, behavior, constraints and open decisions. Developer
+1. The spec writer supplies acceptance IDs, behavior, constraints and open decisions. Developer
    inspects existing components, styling conventions and data/API contracts. UX
    proposes the journey and a short design brief; do not invent requirements.
 2. Follow Paper's current guide for typography checks, existing tokens, brief before
    visual mutations, incremental creation and screenshot review. Use explicit file/page
    IDs. Keep exploration separate from agreed redlines; do not mark a page approved
    merely because it is named "Agreed redlines".
-3. Review with PM and developer before broad implementation. Human resolves material
-   tradeoffs. PM updates acceptance criteria; UX records agreed screens, states,
+3. Review with spec writer and developer before broad implementation. Human resolves material
+   tradeoffs. The spec writer updates acceptance criteria; UX records agreed screens, states,
    interactions and revision in design.md; coordinator maps them to checkpoints.
    Bound iterations to the time available; do not require polished mockups for every state.
 4. Supply exact structure/styles/assets through available Paper export/inspection tools

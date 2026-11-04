@@ -1,8 +1,9 @@
 # AI engineering harness
 
 A reusable, stack-neutral workspace for solving software problems with an AI team.
-You act as principal engineer and product owner. A program manager authors the
-spec; developers implement; QA verifies; the lead coordinates and reviews.
+You act as principal engineer and product owner. The engineering lead works directly
+with you, turns design into an executable plan, and coordinates specialists as needed.
+Spec authors capture intent; developers implement; independent QA/CR evaluates.
 
 For an existing codebase, start with [the provided-repository workflow](#using-this-harness-with-a-provided-repository). It requires only this README and the role files.
 
@@ -11,12 +12,24 @@ supplied problem using its actual constraints, without a preselected domain or t
 Skills now use the `engineering-*` names. The existing `interview` CLI, Python package
 and workspace filename remain compatible tooling names.
 
+## Working model
+
+Think of a kitchen: you set the intended result and standards; the engineering lead
+organizes the work, checks what is missing, sequences dependencies and brings in the
+right sous chefs. Specialists receive bounded assignments, not standing seats.
+A spec author helps capture decisions when useful; it is not a management layer.
+
+Design → proposed implementation plan → exposed gaps → refined design → agreed
+checkpoint. The lead owns this loop and recommends the next step; you resolve
+consequential product and architecture choices. Routine agreed execution stays autonomous.
+Use this model for the actual problem, then refine it from observed results.
+
 ## Start here
 
 Give the agent the task and the paths in [the opening prompt](prompts/start.md).
 Start with the lead and your normal design discussion. The roles are an on-demand
 library, not a team loaded at startup. Load only the skill for the current work and
-spawn a subagent when it has a concrete assignment: PM/scribe for spec authorship,
+spawn a subagent when it has a concrete assignment: spec author/scribe for spec authorship,
 developer for needed investigation or implementation, UX for meaningful Paper design,
 and independent QA/CR when there is a candidate to evaluate. Agree the first checkpoint;
 the same lead then coordinates implementation and review. A phase change does not
@@ -73,7 +86,7 @@ Give the agent this instruction, replacing the paths:
    `docs/ACTIVE_SESSION` to that folder's relative path. These files are local and
    ignored by Git. No CLI is required; normal file editing is sufficient.
 4. **Design together, then coordinate.** The human owns product and principal
-   engineering decisions. PM/scribe authors the spec; developers explain the existing
+   engineering decisions. The lead or delegated spec author captures agreed intent in the spec; developers explain the existing
    code and implementation options. Once the human agrees the spec and first
    checkpoint, coordinate implementation, QA and review using the plan.
 5. **Do application work in the target.** Give every worker the target working
@@ -91,9 +104,9 @@ code in the provided repo. Its setup remains independent of this harness's Pytho
 The existing `interview attach` helper is optional; it automates the session records
 and two-folder workspace described above. The README workflow works without it.
 
-## UI work: PM + Paper UX + developer
+## UI work: spec author + Paper UX + developer
 
-When UI design is needed, involve the established roles on demand: PM authors the spec, UX designs in
+When UI design is needed, involve the established roles on demand: the assigned spec writer (lead or delegated author) maintains the spec, UX designs in
 Paper, and developers contribute codebase knowledge and feasibility. Agree the
 important redlines with the human, implement, then have UX/QA review the running UI.
 
@@ -109,8 +122,8 @@ keep those changes explicit and scoped, without adding a background monitoring s
 
 | Stage | Owner | Durable output |
 | --- | --- | --- |
-| Frame and design | You + PM, developer input | `spec.md` with acceptance examples |
-| Sequence | Lead + PM | `plan.md` with bounded checkpoints |
+| Frame and design | You + lead; optional spec author/developer input | `spec.md` with acceptance examples |
+| Plan and resolve gaps | Engineering lead; human resolves consequential choices | `plan.md` with dependencies, integration and validation |
 | Implement | Developer | Code and focused tests |
 | Verify | QA; UX for visual work | `validation.md` tied to code state |
 | Review and checkpoint | Coordinator; delivery executes Git | Review disposition and commit |

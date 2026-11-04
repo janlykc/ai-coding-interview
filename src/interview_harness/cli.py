@@ -298,7 +298,7 @@ def doctor(root: Path) -> int:
             for role in [
                 "coordinator",
                 "reviewer",
-                "program_manager",
+                "spec_author",
                 "scribe",
                 "developer",
                 "qa",

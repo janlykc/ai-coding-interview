@@ -6,8 +6,8 @@ Begin with the lead only. Load phase skills and role instructions on demand, and
 delegate only concrete work. The roles below describe ownership, not a starting
 roster; design, implementation, testing and release do not each require a new team.
 
-The human owns product direction and principal engineering judgment. PM/scribe
-captures the spec while developers explain existing code and feasible options.
+The human owns product direction and principal engineering judgment. The lead or delegated spec writer
+captures agreed intent while developers explain existing code and feasible options.
 A high-level problem may need several components; choose the smallest useful set
 and document inputs/outputs, failure behavior and dependencies before parallel work.
 An algorithm or debugging task may need only one function and a few examples.
@@ -16,8 +16,13 @@ Allocate effort to uncertainty and risk within the actual deadline. Keep design 
 when behavior is clear; spend more when contracts or decisions are unresolved.
 Communicate decisions and evidence to the stakeholder.
 
+The lead converts design into a proposed implementation plan and checks for gaps:
+behavior, contracts, feasibility, dependency order, integration and verification.
+Resolve consequential gaps with the human, update the design, and revise the plan.
+The spec author records agreed answers; the lead owns decomposition and sequencing.
+
 Agree the spec and first checkpoint, then let the coordinator orchestrate within scope.
-The same lead keeps context across design and delivery. PM keeps the spec current;
+The same lead keeps context across design and delivery. The assigned spec writer (lead or delegated author) keeps the spec current;
 coordinator keeps execution current. Use a separate scribe only when it helps.
 
 ## Checkpoints

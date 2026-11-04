@@ -24,9 +24,15 @@ Use target-native commands and Git policy. See `docs/existing-repository.md` whe
 
 ## Ownership and context
 The human is principal engineer, product owner and acceptance authority. The lead
-retains design context and coordinates the agreed plan. PM/scribe authors the spec
-when needed; developers investigate and implement; independent QA/CR evaluates a
-candidate. Load their instructions only when assigning that work.
+retains design context and owns converting design into an executable plan: discover
+gaps, verify feasibility, order dependencies, and define integration and validation.
+The human directs goals and consequential phase/scope decisions; the lead recommends
+next steps and advances already agreed work. Planning can reopen design questions.
+
+Spec authorship is a responsibility, not a mandatory management layer. The lead may
+capture a small spec directly; delegate synthesis or ongoing maintenance to the spec
+author/scribe when useful. Keep one named spec writer. Developers investigate and
+implement; independent QA/CR evaluates a candidate. Load roles only for assigned work.
 
 The coordinator reviews code/evidence and owns plan/handoff state; it does not implement
 application code, execute product tests or run experiments. Delegate execution. If
@@ -57,7 +63,7 @@ respect runtime limits. Phase transitions never automatically spawn a team.
 
 ## UI and learning
 Load `engineering-ui-design` when meaningful UI design needs a Paper pass. UX owns
-the canvas/redlines, PM the behavior, developer feasibility/code. Involve each only
+the canvas/redlines, the spec writer the agreed requirements, developer feasibility/code. Involve each only
 as needed. Verify Paper tools in the actual worker and use the session's selected
 project/file. Compare the running result with agreed design.
 

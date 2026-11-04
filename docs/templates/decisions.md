@@ -1,6 +1,6 @@
 # Decisions — {{SESSION}}
 
-Owner: PM/scribe. Record decisions, not a transcript.
+Owner: spec author/scribe. Record decisions, not a transcript.
 
 | ID | Decision and status | Reason / relevant alternative | Affected acceptance/checkpoints |
 | --- | --- | --- | --- |

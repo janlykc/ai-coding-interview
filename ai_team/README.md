@@ -8,8 +8,8 @@ selected repository root and pass the role path in its assignment.
 | Role | Read when | Ownership |
 | --- | --- | --- |
 | [Coordinator](coordinator/AGENTS.md) | Main agent throughout | Technical direction, review, plan state, checkpoint decisions |
-| [Program manager](program_manager/AGENTS.md) | Design or scope changes | Spec and acceptance criteria |
-| [Scribe](scribe/AGENTS.md) | Decisions need recording | Concise decision log; may be combined with PM |
+| [Specification author](spec_author/AGENTS.md) | Delegated synthesis or spec maintenance | Records agreed intent and acceptance examples; no phase authority |
+| [Scribe](scribe/AGENTS.md) | Decisions need recording | Concise decision log; may be combined with spec author |
 | [Developer](developer/AGENTS.md) | Investigation or implementation | Python/frontend and existing code; component-specific assignment |
 | [Reviewer](reviewer/AGENTS.md) | Code ready for review | Independent CR and findings, separate from implementation |
 | [QA](qa/AGENTS.md) | Verification | Independent behavior checks and evidence |
@@ -17,7 +17,7 @@ selected repository root and pass the role path in its assignment.
 | [Delivery](delivery/AGENTS.md) | Commit, push or environment work | Git execution, local run, optional deployment |
 
 Start with the lead only. This is a library, not a startup roster: do not load every
-role into context. Bring in PM/scribe for spec authorship, a developer for concrete
+role into context. Delegate spec authorship only when useful; bring in a developer for concrete
 investigation or implementation, and QA/CR when a candidate needs evaluation.
 Create backend/frontend workers only when the boundaries support independent work.
 The coordinator should use the strongest reasoning setting available within the
@@ -29,8 +29,8 @@ these are preferences, not hard-coded model IDs or promises about host controls.
 Roles need not be simultaneous or separate processes. Check the host's actual slot
 limit; with four total slots, keep the coordinator plus at most three active workers.
 
-- Design: load engineering-spec. Bring in PM/scribe to author the spec once the task
-  is understood. Ask a developer only when code investigation or feasibility needs it.
+- Design: load engineering-spec. The lead can capture a small spec; delegate to
+  spec author/scribe when synthesis or ongoing maintenance warrants it. Ask a developer only when code investigation or feasibility needs it.
   Load engineering-ui-design and involve UX when meaningful UI design is needed.
 - Build: load engineering-deliver and delegate the next implementation checkpoint.
   Add more developers only for useful independent work.
@@ -56,13 +56,14 @@ Pass: role path; session path; checkpoint and acceptance IDs; relevant code/cont
 owned files; input/output contract; forbidden overlap; validation expected; stop condition.
 Workers return: changed files, behavior, evidence, open risks and recommended next action.
 Do not copy the whole chat or every role/skill into every worker. Stop stale assignments
-when scope changes. PM owns spec writes; coordinator owns plan and handoff writes;
+when scope changes. Name one spec writer (lead or delegated spec author); coordinator
+owns plan and handoff writes;
 QA owns validation writes. Others propose edits to those owners.
 
 If the runtime cannot spawn agents, say so. Ask the human to allow sequential role
 passes, or have them open the required worker manually. Do not claim independence
 for a review performed by the implementation agent itself.
 
-For substantial UI design, PM, Paper UX and developer collaborate as needed,
+For substantial UI design, spec author, Paper UX and developer collaborate as needed,
 without requiring three simultaneous workers. See
 [Paper setup](../docs/paper-design.md) and [workflow learnings](../docs/workflow-learnings.md).

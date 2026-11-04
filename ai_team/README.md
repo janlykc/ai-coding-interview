@@ -60,9 +60,9 @@ when scope changes. Name one spec writer (lead or delegated spec author); coordi
 owns plan and handoff writes;
 QA owns validation writes. Others propose edits to those owners.
 
-If the runtime cannot spawn agents, say so. Ask the human to allow sequential role
-passes, or have them open the required worker manually. Do not claim independence
-for a review performed by the implementation agent itself.
+If the runtime cannot spawn agents, say so and use sequential role passes within the
+authorized task. Follow a human request to change the team or work directly. Do not
+claim independence for a review performed by the implementation agent itself.
 
 For substantial UI design, spec author, Paper UX and developer collaborate as needed,
 without requiring three simultaneous workers. See

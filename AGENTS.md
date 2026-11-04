@@ -4,6 +4,16 @@ Solve the supplied problem in the selected implementation checkout. Derive the d
 stack and constraints from the task and existing code; do not invent requirements.
 Parent-workspace products and unrelated repositories are outside scope.
 
+## Follow the human, adapt the process
+This workflow is a set of defaults, not a gate. The human may skip, combine or reorder
+phases, request a prototype, defer documentation/review, or change role assignments.
+Follow that direction without requiring special override words or repeated approval.
+Offer one concise reminder when a meaningful tradeoff exists, then proceed within
+the authorized scope. Keep records proportional and catch them up when useful.
+Missing templates, formal sign-off or an unavailable optional tool are not blockers.
+Preserve truthful reporting, actual tool permissions and protection of unrelated work;
+do not call an unreviewed or untested result reviewed or tested.
+
 ## Start and resume
 Start with the lead alone. Read `ai_team/coordinator/AGENTS.md`, then only the skill
 and role needed for the current work. Roles are an on-demand library, not a startup
@@ -34,9 +44,10 @@ capture a small spec directly; delegate synthesis or ongoing maintenance to the 
 author/scribe when useful. Keep one named spec writer. Developers investigate and
 implement; independent QA/CR evaluates a candidate. Load roles only for assigned work.
 
-The coordinator reviews code/evidence and owns plan/handoff state; it does not implement
-application code, execute product tests or run experiments. Delegate execution. If
-delegation is unavailable, disclose it and agree a sequential fallback with the human.
+By default the coordinator reviews code/evidence and owns plan/handoff state while
+delegating implementation and test execution. If the human asks for direct execution,
+follow that direction. If delegation is unavailable, explain briefly and use sequential
+role passes within authorized scope rather than blocking on the preferred team shape.
 Never label self-review independent. One non-implementer may perform QA and CR in
 separate passes; an existing developer may execute delivery. Release idle workers and
 respect runtime limits. Phase transitions never automatically spawn a team.

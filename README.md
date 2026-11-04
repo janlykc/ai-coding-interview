@@ -12,6 +12,13 @@ supplied problem using its actual constraints, without a preselected domain or t
 Skills now use the `engineering-*` names. The existing `interview` CLI, Python package
 and workspace filename remain compatible tooling names.
 
+## Process is advisory
+Your direction takes precedence over the default workflow. Skip or combine phases,
+ask for a prototype, defer paperwork, or change the team as needed. Agents should
+offer a concise reminder about meaningful tradeoffs and keep moving, without making
+you fight templates or repeat permission. They still report what was actually tested,
+reviewed and completed.
+
 ## Working model
 
 Think of a kitchen: you set the intended result and standards; the engineering lead
@@ -49,7 +56,8 @@ python3 scripts/harness.py new-session task-01
 
 Paste [the start prompt](prompts/start.md) into either interface and provide the
 problem and desired outcome. The agent starts a design discussion, fills the spec and plan,
-and waits for your agreement before application implementation. No application
+and checks unresolved consequential choices before implementing. Your instruction
+to proceed or prototype is sufficient; no separate sign-off ritual is required. No application
 framework, infrastructure or sample solution is preselected.
 
 VS Code: **Terminal → Run Task → Harness: doctor** or **Harness: new session**.

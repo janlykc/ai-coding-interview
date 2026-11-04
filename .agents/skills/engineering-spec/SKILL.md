@@ -36,8 +36,10 @@ application operations after verifying it belongs to the same Git repository.
    dependencies, integration points, test evidence and exit criteria.
    Record local commit policy and any authorized remote/branch. Discuss whether
    local running suffices or deployment is actually part of acceptance.
-5. Ask for agreement to the spec and first checkpoint. Record the actual decision;
-   do not manufacture an approval. Implementation may then proceed within agreed scope.
+5. Confirm consequential unresolved choices when needed. An instruction to implement,
+   prototype or proceed is direction to act; do not demand separate formal sign-off.
+   If the human prefers to explore in code, capture only useful assumptions and refine
+   the spec/plan from results. Record actual decisions without inventing agreement.
 
 Size design effort to uncertainty, risk and the actual deadline; do not assume a fixed timebox.
 Avoid spawning the whole team or requiring exhaustive documentation. On later changes,

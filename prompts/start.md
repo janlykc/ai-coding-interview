@@ -13,8 +13,9 @@ refine the design before dispatching affected work. Capture a small spec yoursel
 delegate spec synthesis/maintenance or developer investigation only when useful. Do not preload or launch the whole team at startup or at phase transitions.
 Clarify consequential ambiguities, recommend defaults and challenge my assumptions.
 Produce a brief spec and checkpoint plan, including how we will test and demonstrate
-it. Wait for our agreement before implementing. Do not invent a problem if I have
-not provided it yet.
+it where useful. Follow my direction if I ask to prototype, skip a phase or work
+directly. Remind me briefly of meaningful tradeoffs, then proceed; the workflow
+should support us, not restrict us. Do not invent a problem if none is supplied.
 
 Time available: [actual deadline or time budget, if any]
 Task: [describe the problem and desired outcome]

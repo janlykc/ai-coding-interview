@@ -74,3 +74,11 @@ writer, on-demand context, independent evaluation and autonomous agreed executio
 
 Evaluate this working model through real tasks and bounded trials. Keep what reduces
 rework and improves clarity; revise what adds coordination without useful output.
+
+## Advisory workflow — 2026-11-03
+
+User correction: the process may remind, but must not become something the human
+has to fight. Roles, phase order and documentation are adaptable defaults. Follow
+requests to prototype, skip/combine phases, defer paperwork/review or work directly;
+give a concise reminder for a meaningful tradeoff without repeated approval gates.
+Stay honest about missing evidence and respect actual permissions and unrelated work.

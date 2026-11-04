@@ -10,7 +10,7 @@ Status: planning. Time budget: to be agreed.
 - Local commits: coherent checkpoints after coordinator review.
 - Push: not yet authorized for this session; record exact remote and branch when agreed.
 - Deployment: local demonstration by default; external target/authorization not specified.
-- Delegation: verify runtime support; coordinator does not execute application work.
+- Delegation: preferred when useful; honor requested direct execution or use sequential roles when unavailable.
 
 ## Design gaps and readiness
 

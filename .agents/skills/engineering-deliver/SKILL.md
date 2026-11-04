@@ -12,7 +12,9 @@ Explicitly pass these paths to workers; do not assume cross-repository discovery
 
 
 Read the harness root `AGENTS.md`, `ai_team/coordinator/AGENTS.md` and the active session's spec,
-plan and handoff. If agreement or critical requirements are missing, return to design.
+plan and handoff when present. Follow the human's current direction. Missing documents
+do not force a return to design: use the task and known context, recommend a default
+for ambiguity, and ask only when a consequential decision genuinely blocks useful work.
 
 Load other skills and role files only when their work becomes necessary. A checkpoint
 does not require a new worker for every responsibility; reuse suitable workers while
@@ -21,7 +23,7 @@ preserving independent review. Do not spawn idle spec author, UX, QA or delivery
 For each checkpoint:
 1. Dispatch a developer with acceptance IDs, relevant code, owned paths, dependencies,
    verification expected and stop condition. Read the matching role file; pass only
-   necessary context. Coordinator stays out of implementation and test execution.
+   necessary context. Delegation is the default; honor a requested direct-execution mode.
 2. Have the developer implement and run focused checks. Have QA independently check
    acceptance and risky seams using `ai_team/qa/AGENTS.md`. UX is optional for UI work.
 3. Coordinator inspects the diff, callers and evidence. Route concrete defects back to

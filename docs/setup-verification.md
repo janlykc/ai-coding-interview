@@ -79,3 +79,12 @@ The reviewed tracked-diff SHA-256 was
 The reviewer inspected instructions and ran diff checks; it did not independently run
 the Git rehearsal, provider review or deployment. This verification-note addition is
 subsequent documentation, not part of that frozen review. No finding required repair.
+
+## Holistic review before the first sample-question rehearsal
+
+On 2026-11-03 a full repository pass and separate reviewer identified attached-mode
+resume/command/worktree contradictions, an environment-sensitive command example,
+stale counts and coordination overhead risks. See holistic-assessment.md for findings,
+corrections and what remains unproven. Four regression tests increased the suite from
+14 to 18; lint/format, package build, doctor and six skill validators pass. No real
+interview sample, application deployment or live interface switch was performed here.

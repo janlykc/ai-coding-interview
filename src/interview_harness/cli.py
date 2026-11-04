@@ -116,7 +116,7 @@ Inspect the target's applicable AGENTS.md files and project conventions. Read
 Resolve role/skill paths from the harness and application paths from the target.
 Use the target's stack, tests, dependencies, branch and remotes. Do not install the
 harness as an application dependency or replace target instructions/configuration.
-Run workers in the target checkout and give each the absolute harness role and
+Run each worker in its explicitly assigned target worktree and give it the absolute harness role and
 session paths. Preserve target-specific requirements; raise genuine conflicts.
 Begin design with me, or resume the agreed checkpoint. Do not invent the task.
 """
@@ -135,7 +135,8 @@ Begin design with me, or resume the agreed checkpoint. Do not invent the task.
     plan = session / "plan.md"
     plan.write_text(
         plan.read_text().replace(
-            "configure harness.commands.json", "use target-native commands (not the harness runner)"
+            "Standalone: optional harness.commands.json. Attached: target-native commands.",
+            "Use target-native commands (not the harness runner).",
         )
         + f"\nImplementation Git checkout: {target}\n"
         + f"Initial branch: {context['target_branch_at_attach']}\n"
@@ -161,12 +162,50 @@ Begin design with me, or resume the agreed checkpoint. Do not invent the task.
 def attached_context(root: Path) -> dict | None:
     if not (root / "docs/ACTIVE_SESSION").exists():
         return None
-    path = root / active_session(root) / "context.json"
-    return json.loads(path.read_text()) if path.exists() else None
+    session = root / active_session(root)
+    path = session / "context.json"
+    if not path.exists():
+        if session.resolve().is_relative_to((root / ".harness/sessions").resolve()):
+            raise ValueError(
+                "Attached session is missing context.json; establish its target first."
+            )
+        return None
+    context = json.loads(path.read_text())
+    keys = ("harness_root", "target_root", "session_root")
+    if not isinstance(context, dict) or context.get("mode") != "attached":
+        raise ValueError("context.json must describe mode 'attached'.")
+    if not all(
+        isinstance(context.get(key), str) and Path(context[key]).is_absolute() for key in keys
+    ):
+        raise ValueError(
+            "Attached context requires absolute harness_root, target_root and session_root."
+        )
+    if Path(context["harness_root"]).resolve() != root.resolve() or (
+        Path(context["session_root"]).resolve() != session.resolve()
+    ):
+        raise ValueError(
+            "Attached context paths do not match this harness/session; rebind them first."
+        )
+    target = Path(context["target_root"]).resolve()
+    if not target.is_dir():
+        raise ValueError("Attached target is missing; restore the checkout path.")
+    top = git(target, "rev-parse", "--show-toplevel")
+    if top == "unavailable" or Path(top).resolve() != target:
+        raise ValueError("Attached target is no longer a Git/worktree root.")
+    if target.is_relative_to(root.resolve()) or root.resolve().is_relative_to(target):
+        raise ValueError("Use separate, non-nested target and harness checkouts.")
+    return context
+
+
+def command_config(root: Path) -> dict:
+    config = json.loads((root / "harness.commands.json").read_text())
+    if not isinstance(config, dict):
+        raise ValueError("harness.commands.json must be an object mapping command names to steps.")
+    return config
 
 
 def command_steps(root: Path, name: str) -> list[dict]:
-    config = json.loads((root / "harness.commands.json").read_text())
+    config = command_config(root)
     steps = config.get(name)
     if not steps:
         raise ValueError(f"Application command {name!r} is NOT CONFIGURED; no check ran.")
@@ -286,7 +325,13 @@ def doctor(root: Path) -> int:
     print(f"Git: {shutil.which('git') or 'MISSING'}")
     print(f"Codex CLI (optional): {shutil.which('codex') or 'not on PATH; IDE/app can be used'}")
     print(f"Active session: {active_session(root)}")
-    config = json.loads((root / "harness.commands.json").read_text())
+    context = attached_context(root)
+    if context:
+        print(
+            f"Attached target: {context['target_root']}; run its native application checks there."
+        )
+        print("Configuration below belongs to the support harness, not the attached application.")
+    config = command_config(root)
     for name in ("test", "lint", "build", "dev"):
         if config.get(name):
             command_steps(root, name)

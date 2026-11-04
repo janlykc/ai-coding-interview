@@ -5,7 +5,8 @@ description: Design interview UI in Paper MCP with PM and developer collaboratio
 
 Read the active session, `ai_team/ux/AGENTS.md`, and `docs/paper-design.md` from the
 harness. In attached mode resolve harness guidance from `harness_root`, application
-code from `target_root`, and planning records from `session_root` in context.json.
+code from the assigned implementation worktree (default `target_root`), and planning
+records from `session_root` in context.json. Verify worktree repository identity.
 
 ## Connect and establish ownership
 

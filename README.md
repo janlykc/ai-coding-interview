@@ -6,31 +6,25 @@ spec; developers implement; QA verifies; the lead coordinates and reviews.
 
 For an existing codebase, start with [the provided-repository workflow](#using-this-harness-with-a-provided-repository). It requires only this README and the role files.
 
-## Project foundation
+## Start here
 
-Uses a `pyproject.toml`, `src/` package layout, Hatchling build backend and a local
-virtual environment, adapting the packaging conventions of the existing repositories.
-The harness has no runtime dependencies. Development dependencies are pinned in
-`requirements-dev.lock`; Python 3.11+ is required. Application dependencies and any
-frontend manifest will be chosen when the actual problem is known.
+Give the agent the task and the paths in [the opening prompt](prompts/start.md).
+Begin with your normal design discussion: PM/scribe drafts the spec, developer
+supplies feasibility, and UX joins in Paper for UI work. Agree the first checkpoint;
+the same lead then coordinates implementation and review. Start with a small active
+team, bringing QA/CR in when there is code to inspect. You do not need every role,
+skill, worktree or template at once.
 
-```sh
-make setup
-make check
-.venv/bin/interview doctor
-```
+For tomorrow's practice, use [the test-drive plan](docs/test-drive.md). The initial
+[holistic assessment](docs/holistic-assessment.md) distinguishes readiness checks from
+what only a real sample-question session can tell us.
 
-`make setup` creates `.venv`, installs the pinned development tools and installs the
-package in editable mode. `make check` runs lint/format checks, harness tests, package
-build and doctor. On Windows or without Make, use `python -m venv .venv`, the venv's
-Python to install `-r requirements-dev.lock`, then `pip install --no-build-isolation
---no-deps -e .`; run the equivalent commands listed in Makefile. The pinned file records
-this verified development environment, not a universal cross-platform resolver lock.
+## Open a standalone exercise
 
-## Open and start
-
-Open `interview.code-workspace` in VS Code, or open this repository as a local
-Codex project. Use both side by side against the **same checkout**.
+Keep this repo's main branch as the reusable baseline. Create an exercise worktree
+using the reuse instructions below, then open its `interview.code-workspace` in VS
+Code and that same checkout in Codex. The agent may create session files directly;
+the commands below are optional helpers.
 
 ```sh
 python3 scripts/harness.py doctor
@@ -152,29 +146,6 @@ contain the human-and-agent procedure. Skills: `interview-review` and
 `interview-test-deploy`; reviewer role: `ai_team/reviewer/AGENTS.md`.
 No additional command wrapper or company deployment service is required.
 
-## Configure application commands when the task is known
-
-`harness.commands.json` starts empty. The harness never labels that as a passing test.
-Add executable argument arrays with a working directory relative to this repository:
-
-```json
-{
-  "test": [{"argv": ["python3", "-m", "pytest", "tests/app"], "cwd": ".", "timeout_seconds": 120}],
-  "lint": [],
-  "build": [],
-  "dev": []
-}
-```
-
-This is an example, not an installed dependency or prescribed stack. Add multiple
-steps for multiple components, using their own working directories. No shell
-expansion is performed. `python3 scripts/harness.py run test` executes configured
-steps in order, stops on failure and writes a receipt plus logs to ignored
-`.harness/evidence/`. Use `run lint`, `run build`, or `run dev` similarly. Interactive
-servers are often easier in a dedicated terminal; record their command/port in the
-handoff and stop them when done. Never put credentials in command arguments or logs.
-Summarize relevant evidence in the session's tracked `validation.md`.
-
 ## Reuse without accumulating interview solutions
 
 Keep `main` as the clean harness. After a clean baseline is committed, start each
@@ -195,13 +166,8 @@ The `.agents/skills/` workflows are repository-local and need no global install.
 There is no runtime agent service, background deployment, paid API dependency or
 automatic commit/push hook. The coding agent orchestrates explicitly.
 
-## Verify the harness
+## Optional setup and checks
 
-```sh
-python3 -m unittest discover -s tests/harness -v
-python3 scripts/harness.py doctor
-```
-
-These checks cover harness tooling, not a future application. See
-[setup verification](docs/setup-verification.md) for the actual setup results and
-remaining interactive rehearsal steps.
+[Project tooling](docs/project-tooling.md) explains pyproject.toml, make setup/check,
+the virtual environment, application command configuration and package verification.
+The provided-repository workflow needs none of this installed into the target.

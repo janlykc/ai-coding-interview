@@ -17,9 +17,11 @@ They are qualitative working preferences, not measured claims of superiority.
 ## How agents maintain these agreements
 
 When the human corrects a workflow or a repeated outcome demonstrates a useful change,
-update the narrowest relevant harness role/skill and this short record when it adds
-context. Make the correction during the authorized work; do not merely promise to
-remember. Report the change and validate affected links/skill metadata or tooling.
+apply the correction to current behavior immediately. Record the lesson briefly;
+update the narrowest harness role/skill at a natural checkpoint or after the timed
+exercise unless a blocking fix is needed. Do not derail implementation to maintain
+the harness or merely promise to remember. Report the update and validate affected
+links/skill metadata or tooling.
 Preserve user edits, existing authorization and task scope.
 
 Use relevant conversations and session retrospectives already available to the task.

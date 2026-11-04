@@ -5,12 +5,17 @@ description: Turn an interview task into an agreed concise specification and che
 
 In attached mode, read the session's `context.json` first. Resolve role/skill paths
 from `harness_root`, specs/plans/evidence summaries from `session_root`, and code,
-commands and Git operations from `target_root`. Preserve the target's instructions.
+commands and Git operations from the explicitly assigned implementation worktree
+(defaulting to `target_root`). Verify that worktree belongs to the target Git repository.
+Preserve the target's instructions.
 Explicitly pass these paths to workers; do not assume cross-repository discovery.
 
 
-Read root `AGENTS.md` and the active session. Resolve repository-relative paths from
-the repository root. Use `docs/templates/` via `scripts/harness.py new-session` if needed.
+Read the harness root `AGENTS.md` and the explicitly assigned session (or harness
+active-session pointer). Resolve workflow paths from the harness, not the target.
+Create a missing session using the matching README mode; the new-session helper is
+standalone-only. In parallel work, the assigned worktree overrides target_root for
+application operations after verifying it belongs to the same Git repository.
 
 1. Inspect the task and relevant code. Confirm time available and any task-specific
    restrictions. Do not invent a task if none is supplied.

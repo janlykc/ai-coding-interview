@@ -5,11 +5,13 @@ description: Coordinate implementation, independent verification, code review an
 
 In attached mode, read the session's `context.json` first. Resolve role/skill paths
 from `harness_root`, specs/plans/evidence summaries from `session_root`, and code,
-commands and Git operations from `target_root`. Preserve the target's instructions.
+commands and Git operations from the explicitly assigned implementation worktree
+(defaulting to `target_root`). Verify that worktree belongs to the target Git repository.
+Preserve the target's instructions.
 Explicitly pass these paths to workers; do not assume cross-repository discovery.
 
 
-Read root `AGENTS.md`, `ai_team/coordinator/AGENTS.md` and the active session's spec,
+Read the harness root `AGENTS.md`, `ai_team/coordinator/AGENTS.md` and the active session's spec,
 plan and handoff. If agreement or critical requirements are missing, return to design.
 
 For each checkpoint:
@@ -26,8 +28,10 @@ For each checkpoint:
    Do not require redundant human approval for previously authorized actions.
 5. Refresh the short handoff with code state, next action and any live processes.
 
-Use `harness.commands.json` for application commands once discovered. An empty command
-list is unconfigured, not passing. Harness self-tests do not validate application code.
+In standalone mode, optionally use `harness.commands.json` for application commands.
+An empty list is unconfigured, not passing. In attached mode use target-native commands
+in the assigned implementation worktree; the harness runner deliberately refuses that
+mode. Harness self-tests never validate application code.
 No deployment is assumed; use local run/smoke first. If deployment is required, establish
 its authorized target and record serving revision and smoke result separately from Git.
 
@@ -38,8 +42,9 @@ Conclude with a runnable demonstration, evidence, key code path and honest limit
 For UI checkpoints, use the Paper references in session design.md. Arrange UX and
 QA review of the rendered implementation against the agreed revision. Feed behavior
 changes back to PM and concrete implementation discrepancies back to developers.
-Apply demonstrated workflow corrections to the relevant harness role/skill as part
-of ongoing work, following docs/workflow-learnings.md.
+Apply corrections to current behavior immediately; record lessons briefly and update
+the harness at a natural checkpoint or after the timed exercise, following
+docs/workflow-learnings.md.
 
 For parallel components, follow docs/worktrees.md with disjoint worktree ownership and
 one integration owner. Use interview-review for an independent CR pass before accepted

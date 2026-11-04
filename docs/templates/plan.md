@@ -6,7 +6,7 @@ Status: planning. Time budget: to be agreed.
 ## Environment and Git policy
 
 - Repository/worktree: record absolute path in handoff.
-- Application install/start/test/build commands: discover and record; configure harness.commands.json.
+- Application install/start/test/build commands: discover and record. Standalone: optional harness.commands.json. Attached: target-native commands.
 - Local commits: coherent checkpoints after coordinator review.
 - Push: not yet authorized for this session; record exact remote and branch when agreed.
 - Deployment: local demonstration by default; external target/authorization not specified.

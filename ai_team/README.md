@@ -22,6 +22,26 @@ The coordinator should use the strongest reasoning setting available within the
 user's budget. Smaller implementation tasks may use faster workers where supported;
 these are preferences, not hard-coded model IDs or promises about host controls.
 
+## Phase schedule and context budget
+
+Roles need not be simultaneous or separate processes. Check the host's actual slot
+limit; with four total slots, keep the coordinator plus at most three active workers.
+
+- Design: coordinator + PM/scribe + developer; add UX for a UI task.
+- Build: coordinator + the needed developers; PM/UX remain available for questions
+  but need not occupy running slots after the design handoff.
+- Verify: stop/release idle workers and bring in an independent QA/CR worker. The same
+  non-implementer may perform those two responsibilities in distinct passes.
+- Deliver: reuse an available implementation worker as delivery operator under the
+  coordinator's decision. This is execution, not independent approval.
+
+Use supported stop/follow-up mechanisms and preserve handoffs before retiring a worker.
+Do not keep completed agents occupying slots solely to match the organization chart.
+Load root guidance, the assigned role and the current checkpoint; consult other skills
+only as needed. In a short task, spec.md, plan.md and handoff.md are the initial working
+records. Add validation/review/design records when those phases begin; unused templates
+are not forms that must be filled. Do not transcribe dialogue into multiple files.
+
 ## Assignment contract
 
 Pass: role path; session path; checkpoint and acceptance IDs; relevant code/context;

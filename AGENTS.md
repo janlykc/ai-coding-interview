@@ -5,11 +5,15 @@ parent-workspace product instructions and unrelated projects are outside its sco
 The interview problem and application stack are deliberately unknown.
 
 ## Start and resume
-Read `docs/ACTIVE_SESSION` if present, then that session's `handoff.md`,
-`spec.md`, and current checkpoint in `plan.md`. Confirm the repository, branch,
-working-tree changes, active writer and available time before editing. If there
-is no session, use `python3 scripts/harness.py new-session <slug>` and begin design.
-For harness maintenance, work directly on the harness; no exercise session is needed.
+First identify standalone versus attached mode from the user's task. An explicitly
+assigned session path takes precedence over the harness's `docs/ACTIVE_SESSION`
+pointer. Read that session's handoff, spec and current plan checkpoint, then verify
+actual checkout/branch/dirty state and outstanding writers. In attached mode the
+pointer and workflow files belong to the harness, never the supplied repo.
+If no session exists, follow the README's matching mode. For a new standalone task,
+use a fresh exercise worktree; preserve main as the reusable baseline. The optional
+new-session helper must not replace an attached session. Harness maintenance needs
+no exercise session. Never invent an interview problem to fill empty templates.
 
 ## Attached repository mode
 For a supplied repository, begin with the provided-repository workflow in `README.md`;
@@ -20,7 +24,10 @@ implementation checkout and `harness_root` provides supporting instructions only
 Read the target's applicable instructions first; preserve its stack, conventions and
 requirements. Resolve harness role/skill paths from `harness_root`, application paths
 from `target_root`, and planning records from `session_root`. Pass these absolute paths
-to every worker; their application working directory must be the target.
+to every worker. A worker's explicit worktree assignment is its application directory,
+not necessarily the original target_root. Verify it belongs to the same Git repository
+(e.g. matching resolved git common directory); do not rewrite shared context.json for
+each parallel worker. The handoff names the active integration checkout.
 Do not copy this harness into the target or add it as a dependency. Surface genuine
 instruction conflicts. Application commits/pushes use the target's Git policy, never
 the harness remote. Run the target's native tests and record target code identity.
@@ -41,6 +48,14 @@ readiness; it does not implement application code, run product tests or execute
 experiments. Delegate those tasks. If delegation is unavailable, disclose it and
 agree a sequential developer/QA fallback with the human before changing roles.
 
+## Small active team
+Roles are responsibilities, not a requirement for eight live agents. Follow the
+phase schedule in `ai_team/README.md`: combine PM/scribe, activate UX for UI, and
+release idle workers before bringing in QA/CR. One independent non-implementer may
+perform QA and CR as separate passes. An existing developer may execute delivery
+under coordinator direction after implementation stops. Preserve independence and
+the coordinator's non-implementation role. Respect actual runtime slot limits.
+
 ## UI design and learning from use
 For UI tasks, activate the PM–UX–developer group and
 `.agents/skills/interview-ui-design/SKILL.md`. UX owns Paper designs/redlines; PM owns
@@ -48,8 +63,9 @@ the specification; developer contributes feasibility and implements; UX/QA revie
 the running result. Verify Paper access in the actual UX worker before relying on it.
 Use the dedicated ai-interview project described in `docs/paper-design.md`.
 
-Apply demonstrated workflow corrections to the relevant harness role/skill during
-this work, using `docs/workflow-learnings.md`. Keep changes scoped and evidence-based;
+Apply explicit corrections to current behavior immediately. Record demonstrated
+workflow improvements briefly and update the relevant harness role/skill at a natural
+checkpoint or after the timed exercise, unless a blocking fix is needed. Use `docs/workflow-learnings.md`. Keep changes scoped and evidence-based;
 do not just promise to remember, copy private chat history, or create background jobs.
 
 ## Execution

@@ -1,4 +1,8 @@
-Start in planning mode. Read AGENTS.md and use the interview-spec skill.
+Start in planning mode.
+Harness: [absolute harness path]
+Implementation repository/worktree: [absolute path; same as harness for standalone]
+Read the harness README.md and AGENTS.md, follow the matching standalone/attached
+mode, and explicitly read .agents/skills/interview-spec/SKILL.md from the harness.
 I am the principal engineer, product owner and primary stakeholder.
 You are the engineering lead, becoming coordinator after we agree the plan.
 Use a PM/scribe to author the spec and developer input to ground it in the code.

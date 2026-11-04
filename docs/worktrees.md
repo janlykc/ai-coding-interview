@@ -34,6 +34,11 @@ and create a legitimate baseline first. Never reset or stash someone else's work
 make the example fit. In an attached session, all these are worktrees of the provided
 repo, not the support harness.
 
+The explicit worker worktree assignment takes precedence over the original target_root
+for application edits/tests/Git. Verify the checkout shares the target's resolved Git
+common directory (`git rev-parse --path-format=absolute --git-common-dir`). Keep shared
+context.json stable while workers run; record the current integration path in handoff.md.
+
 Each worker reads target instructions from its own checkout, then explicitly loads its
 harness role and the shared session. Keep PM/spec and coordinator/plan writes with their
 owners in the session location; do not create competing specs in every worktree. Each

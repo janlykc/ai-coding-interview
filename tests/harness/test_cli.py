@@ -77,6 +77,67 @@ class HarnessTests(unittest.TestCase):
                 attach_repository(self.root, candidate, "invalid")
         self.assertFalse((self.root / "docs/ACTIVE_SESSION").exists())
 
+    def test_missing_or_malformed_attached_context_cannot_run_support_checks(self):
+        session = attach_repository(self.root, self.target_repo(), "attached")
+        context_file = session / "context.json"
+        valid = json.loads(context_file.read_text())
+        self.configure([{"argv": [sys.executable, "-c", 'open("wrong-root", "w").close()']}])
+        for value in (
+            {},
+            [],
+            {**valid, "target_root": "."},
+            {**valid, "session_root": str(self.root)},
+            {**valid, "target_root": str(self.root / "missing")},
+        ):
+            context_file.write_text(json.dumps(value))
+            with self.subTest(value=value), self.assertRaises(ValueError):
+                self.run_quiet()
+        context_file.unlink()
+        with self.assertRaisesRegex(ValueError, "missing context.json"):
+            self.run_quiet()
+        self.assertFalse((self.root / "wrong-root").exists())
+
+    def test_replaced_target_checkout_is_rejected(self):
+        target = self.target_repo()
+        attach_repository(self.root, target, "attached")
+        (target / ".git").rename(target / "old-git")
+        with self.assertRaisesRegex(ValueError, "no longer a Git/worktree root"):
+            attached_context(self.root)
+
+    def test_command_config_requires_mapping(self):
+        (self.root / "harness.commands.json").write_text("[]")
+        with self.assertRaisesRegex(ValueError, "object mapping"):
+            command_steps(self.root, "test")
+
+    def test_attachment_accepts_a_real_linked_worktree(self):
+        target = self.target_repo()
+        subprocess.run(["git", "-C", str(target), "add", "AGENTS.md"], check=True)
+        subprocess.run(
+            [
+                "git",
+                "-C",
+                str(target),
+                "-c",
+                "user.name=Test",
+                "-c",
+                "user.email=test@example.invalid",
+                "commit",
+                "-qm",
+                "base",
+            ],
+            check=True,
+        )
+        extra = tempfile.TemporaryDirectory()
+        self.addCleanup(extra.cleanup)
+        worktree = Path(extra.name) / "worker"
+        subprocess.run(
+            ["git", "-C", str(target), "worktree", "add", "-qb", "worker", str(worktree)],
+            check=True,
+        )
+        attach_repository(self.root, worktree, "linked")
+        self.assertEqual(attached_context(self.root)["target_root"], str(worktree.resolve()))
+        self.assertTrue((worktree / ".git").is_file())
+
     def configure(self, steps):
         (self.root / "harness.commands.json").write_text(json.dumps({"test": steps}))
 

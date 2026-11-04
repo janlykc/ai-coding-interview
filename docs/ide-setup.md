@@ -26,7 +26,9 @@ not automate the VS Code UI or install an IDE control server.
 
 1. Ask the current agent to use `interview-handoff` to save context and stop workers.
 2. Confirm the outgoing agent is idle; save open editor buffers.
-3. Open the same checkout in the other interface. Use `prompts/resume.md`.
+3. Open the same checkout in the other interface. Fill the harness, session and
+   implementation paths in `prompts/resume.md`; attached-mode session files are in
+   the support harness, not the supplied repo.
 4. Verify branch, HEAD, dirty files and next checkpoint, then name the new writer
    in the handoff. Resume only after resolving mismatched or unsaved state.
 

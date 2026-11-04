@@ -16,3 +16,7 @@ For model/data tasks, use a fixed labeled sample, baseline and error analysis; i
 precision/recall/F1 only when appropriate. Aggregate improvements do not excuse lost
 critical cases. Report concrete reproduction steps and severity. The human retains
 product acceptance; coordinator decides checkpoint readiness from evidence.
+
+For UI tasks, pair with the UX owner to review the running interface against the
+Paper revision recorded in design.md. Identify visual discrepancies separately from
+functional failures and note whether design/code changed after the review.

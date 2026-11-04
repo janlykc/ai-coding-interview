@@ -34,3 +34,9 @@ its authorized target and record serving revision and smoke result separately fr
 Keep loops bounded by the remaining interview time. Escalate decisions about behavior,
 architecture, scope or material risk; allow routine experiments within the checkpoint.
 Conclude with a runnable demonstration, evidence, key code path and honest limitations.
+
+For UI checkpoints, use the Paper references in session design.md. Arrange UX and
+QA review of the rendered implementation against the agreed revision. Feed behavior
+changes back to PM and concrete implementation discrepancies back to developers.
+Apply demonstrated workflow corrections to the relevant harness role/skill as part
+of ongoing work, following docs/workflow-learnings.md.

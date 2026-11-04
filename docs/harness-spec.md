@@ -21,7 +21,8 @@ This document specifies the reusable harness; exercise specs live under docs/ses
 - Keep application language/framework choices open until the task arrives. Python
   tooling supports the harness and provides a familiar starting foundation.
 - Use explicit role files plus repository-local skills. Do not hard-code native
-  multi-agent configuration, model identifiers, MCP services or cloud accounts.
+  multi-agent configuration, model identifiers or application cloud accounts. The UI
+  skill declares the verified local Paper MCP dependency and checks worker access.
 - Keep the main agent's design context when it becomes coordinator. Load only relevant
   role instructions and checkpoint context into workers to control token cost.
 - Use durable files to continue across interfaces; no dependence on automatic chat sync.

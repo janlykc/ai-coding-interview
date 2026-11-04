@@ -30,3 +30,8 @@ the repository root. Use `docs/templates/` via `scripts/harness.py new-session` 
 For 60–75 minutes, aim for roughly 5–10 minutes of design, adjusted to the task.
 Avoid spawning the whole team or requiring exhaustive documentation. On later changes,
 revise only affected requirements/checkpoints and preserve decisions that explain why.
+
+For a task with UI, use interview-ui-design and the PM–UX–developer group. Paper is
+the default canvas, with access verified in the UX worker. PM owns requirements; UX
+owns design.md and redlines; dev supplies feasibility. Reference agreed designs in
+the spec and plan before implementing the relevant UI checkpoint.

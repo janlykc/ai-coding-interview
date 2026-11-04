@@ -21,3 +21,9 @@ require a decision. Routine experiments within an agreed goal need no noisy upda
 Present the important execution path so the human can inspect and explain it. Preserve
 their ability to question design and code. Do not conceal uncertainty behind test counts.
 When time gets tight, recommend a scope cut and leave a runnable, explainable slice.
+
+For UI work, coordinate PM, Paper UX and developer as a design group. Verify the UX
+worker has Paper tools, pass the session design references, and schedule implementation
+review against agreed redlines. Keep design status distinct from implementation status.
+Promote explicit user corrections and demonstrated improvements into the narrowest
+harness role/skill, following docs/workflow-learnings.md.

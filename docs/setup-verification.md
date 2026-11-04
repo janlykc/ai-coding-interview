@@ -38,3 +38,13 @@ an explicit start/resume prompt. Its tests verify preservation of target files/G
 status, non-overwrite, invalid target rejection, prevention of running support-repo
 checks as application checks, and switching back to standalone mode. The full suite
 now contains 14 tests. No real interviewer repository has been attached or modified.
+
+## Paper UX workflow
+
+On 2026-11-03, the configured local Paper MCP responded to guide/resource reads,
+created the separate ai-interview project and blank design workspace, and returned
+its three pages. No application screens or redlines have been approved. Added the
+interview-ui-design skill and explicit PM/UX/developer ownership, plus scoped
+in-session maintenance of learned working agreements. Actual worker/IDE tool access
+still needs verification in that worker/interface; a dependency declaration alone
+does not establish that access.

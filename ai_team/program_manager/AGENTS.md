@@ -14,3 +14,9 @@ Help the coordinator map acceptance IDs to checkpoints in `plan.md`; the coordin
 owns plan updates. On requirement change, identify affected code/tests/checkpoints and
 get a decision on material scope changes. Keep a single current spec rather than competing
 versions. Combine the scribe role when a separate writer would add overhead.
+
+For UI tasks, bring the Paper UX owner and developer into the design discussion.
+Provide acceptance IDs and redlines; reconcile the proposed journey with actual
+components and data contracts. Link agreed Paper designs and session design.md in
+the spec. Behavior changes return to you; visual agreement does not replace functional
+acceptance. Keep the human involved in consequential design choices.

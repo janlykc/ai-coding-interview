@@ -12,7 +12,7 @@ selected repository root and pass the role path in its assignment.
 | [Scribe](scribe/AGENTS.md) | Decisions need recording | Concise decision log; may be combined with PM |
 | [Developer](developer/AGENTS.md) | Investigation or implementation | Python/frontend and existing code; component-specific assignment |
 | [QA](qa/AGENTS.md) | Verification | Independent behavior checks and evidence |
-| [UX](ux/AGENTS.md) | UI is material | Interaction design and visual/accessibility review |
+| [UX](ux/AGENTS.md) | UI is material | Paper design/redlines and visual/accessibility review |
 | [Delivery](delivery/AGENTS.md) | Commit, push or environment work | Git execution, local run, optional deployment |
 
 Start with coordinator, PM/scribe and one developer; add QA at a useful checkpoint.
@@ -33,3 +33,6 @@ QA owns validation writes. Others propose edits to those owners.
 If the runtime cannot spawn agents, say so. Ask the human to allow sequential role
 passes, or have them open the required worker manually. Do not claim independence
 for a review performed by the implementation agent itself.
+
+For UI tasks, PM + Paper UX + developer is the default design group. See
+[Paper setup](../docs/paper-design.md) and [workflow learnings](../docs/workflow-learnings.md).

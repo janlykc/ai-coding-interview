@@ -1,0 +1,11 @@
+interface:
+  display_name: "Interview UI design"
+  short_description: "Paper design with PM and developer collaboration"
+  default_prompt: "Use $interview-ui-design to design the interview UI with PM and developer input."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "papaer"
+      description: "Paper desktop MCP; verify access in the UX worker before starting"
+      transport: "streamable_http"
+      url: "http://127.0.0.1:29979/mcp"

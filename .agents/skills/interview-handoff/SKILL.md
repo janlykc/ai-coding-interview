@@ -25,3 +25,7 @@ Use the same checkout in both interfaces. Native chat continuation may depend on
 installed product; this workflow relies on files, not synchronized conversation memory.
 If the skill is not discovered, read this file explicitly and follow it. If no active
 session exists, report that and begin intake rather than inventing prior work.
+
+For UI work, include design.md, Paper file/page links, agreed revision and outstanding
+canvas ownership in the handoff. Record any workflow lesson already applied to the
+harness so the next interface continues with the updated instructions.

@@ -268,7 +268,12 @@ def doctor(root: Path) -> int:
         ],
         *[
             f".agents/skills/{skill}/SKILL.md"
-            for skill in ["interview-spec", "interview-deliver", "interview-handoff"]
+            for skill in [
+                "interview-spec",
+                "interview-deliver",
+                "interview-handoff",
+                "interview-ui-design",
+            ]
         ],
     ]:
         if not (root / relative).is_file():

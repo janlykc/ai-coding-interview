@@ -41,6 +41,17 @@ readiness; it does not implement application code, run product tests or execute
 experiments. Delegate those tasks. If delegation is unavailable, disclose it and
 agree a sequential developer/QA fallback with the human before changing roles.
 
+## UI design and learning from use
+For UI tasks, activate the PM–UX–developer group and
+`.agents/skills/interview-ui-design/SKILL.md`. UX owns Paper designs/redlines; PM owns
+the specification; developer contributes feasibility and implements; UX/QA review
+the running result. Verify Paper access in the actual UX worker before relying on it.
+Use the dedicated ai-interview project described in `docs/paper-design.md`.
+
+Apply demonstrated workflow corrections to the relevant harness role/skill during
+this work, using `docs/workflow-learnings.md`. Keep changes scoped and evidence-based;
+do not just promise to remember, copy private chat history, or create background jobs.
+
 ## Execution
 - Begin in planning for a new problem. Inspect existing code before designing.
   Ask consequential questions, recommend defaults, and challenge assumptions.

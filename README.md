@@ -94,6 +94,20 @@ code in the provided repo. Its setup remains independent of this harness's Pytho
 The existing `interview attach` helper is optional; it automates the session records
 and two-folder workspace described above. The README workflow works without it.
 
+## UI work: PM + Paper UX + developer
+
+For a UI task, use the established design group: PM authors the spec, UX designs in
+Paper, and developers contribute codebase knowledge and feasibility. Agree the
+important redlines with the human, implement, then have UX/QA review the running UI.
+
+[Paper setup and interview workspace](docs/paper-design.md) includes the dedicated
+ai-interview project. The `interview-ui-design` skill handles this loop. Verify MCP
+access in the actual UX worker; role files do not create a connection automatically.
+
+Agents should apply workflow lessons from your corrections and actual usage to the
+relevant roles/skills during the work. [Recorded learnings](docs/workflow-learnings.md)
+keep those changes explicit and scoped, without adding a background monitoring system.
+
 ## Workflow and files
 
 | Stage | Owner | Durable output |

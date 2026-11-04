@@ -18,3 +18,9 @@ keyboard/accessibility behavior when relevant. Do not claim a UI works from buil
 Return changed paths, key execution path, checks actually run, outcomes and limitations.
 Do not silently update product requirements, self-approve a checkpoint or commit while
 other workers still write. The coordinator reviews; delivery executes agreed Git actions.
+
+For UI tasks, participate in the PM–Paper UX loop before implementation. Explain
+existing components, style conventions and data contracts; flag costly or infeasible
+choices early. Implement the selected design using exact Paper exports/inspection
+and the target stack. Resolve deviations with UX/PM and return the running interface
+for UX/QA review; do not treat a screenshot or build success as acceptance.

@@ -33,6 +33,8 @@ Use this model for the actual problem, then refine it from observed results.
 
 ## Pairing when you want it
 
+For a new chat, use the [pairing opening prompt](prompts/pair.md).
+
 Say “pair with me” for closer discussion and smaller changes you can inspect together.
 For example:
 
